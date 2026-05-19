@@ -1,0 +1,17 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.font-title {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.bg-bd-orange { background-color: #FF6600; }
+.text-bd-orange { color: #FF6600; }
+.border-bd-orange { border-color: #FF6600; }
+.hover\:bg-bd-orange-dark:hover { background-color: #E05500; }
+
+.error-fallback {
+    background-color: #f3f4f6;
+    min-height: 48px;
+}
