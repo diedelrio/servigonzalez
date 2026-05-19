@@ -9,8 +9,40 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Animación suave para la transición de las diapositivas */
+        .slide {
+            transition: opacity 0.6s ease-in-out;
+        }
+    </style>
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased">
+
+    <div id="popup-bienvenida" class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs transition-opacity duration-500 opacity-0 pointer-events-none">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-8 shadow-2xl border border-gray-100 relative transform scale-95 transition-transform duration-500">
+            <button onclick="cerrarPopup()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-900 bg-gray-50 hover:bg-gray-100 p-2 rounded-full transition duration-200 cursor-pointer" aria-label="Cerrar ventana">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+            <div class="text-center space-y-4">
+                
+                <span class="block text-xl font-bold uppercase tracking-widest text-bd-orange">Nueva Era en Servi-González</span>
+                <h3 class="font-title text-2xl font-black text-neutral-900 tracking-tight leading-snug">
+                    ¡Evolucionamos para darte <br><span class="text-bd-orange">más y mejores</span> servicios!
+                </h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    Queremos compartir contigo una gran noticia: <strong>Servi-González estrena nueva gerencia</strong>. Iniciamos una etapa de renovación absoluta manteniendo la misma oficialidad y confianza de siempre.
+                </p>
+                <p class="text-gray-500 text-xs leading-relaxed">
+                    Durante los próximos meses iremos implementando nuevos procesos y optimizando nuestros servicios, siempre enfocados en llevar la atención de tus herramientas al siguiente nivel. ¡Gracias por formar parte de nuestra evolución!
+                </p>
+                <div class="pt-4">
+                    <button onclick="cerrarPopup()" class="w-full bg-neutral-900 hover:bg-neutral-800 text-white font-bold py-3.5 rounded-xl transition shadow-md cursor-pointer">
+                        Descubrir las Novedades
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <header class="sticky top-0 z-50 bg-neutral-900 text-white shadow-md">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -18,10 +50,11 @@
                 <span class="font-title text-xl font-extrabold tracking-tight block">SERVI-GONZÁLEZ</span>
                 <span class="text-xs text-gray-400 font-medium tracking-wider uppercase block -mt-1">Servicio Técnico Oficial Autorizado</span>
             </div>
-            <nav class="hidden md:flex space-x-8 font-medium text-sm text-gray-300">
+            <nav class="hidden md:flex space-x-6 lg:space-x-8 font-medium text-sm text-gray-300">
                 <a href="#inicio" class="hover:text-white transition">Inicio</a>
-                <a href="#marcas" class="hover:text-white transition">Garantías Oficiales</a>
+                <a href="#ventas" class="hover:text-white transition">Venta de Maquinaria</a>
                 <a href="#servicios" class="hover:text-white transition">Servicios</a>
+                <a href="#marcas" class="hover:text-white transition">Garantías Oficiales</a>
                 <a href="#ventajas" class="hover:text-white transition">Por qué elegirnos</a>
                 <a href="#contacto" class="hover:text-white transition">Ubicación</a>
             </nav>
@@ -34,83 +67,230 @@
         </div>
     </header>
 
-    <section id="inicio" class="relative bg-neutral-900 text-white py-24 md:py-32 overflow-hidden">
+    <section id="inicio" class="relative bg-neutral-900 text-white h-[600px] md:h-[550px] flex items-center overflow-hidden">
         <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
-        <div class="container mx-auto px-6 relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-6">
-                <span class="inline-block bg-neutral-800 text-bd-orange text-xs font-bold uppercase tracking-widest px-3 py-1 rounded border border-neutral-700">
-                    Taller Autorizado Multimarca
-                </span>
-                <h1 class="font-title text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-none">
-                    ¿Tu herramienta necesita <span class="text-bd-orange">reparación oficial</span>?
-                </h1>
-                <p class="text-gray-400 text-lg max-w-lg">
-                    Somos el centro de confianza en Valencia. Gestionamos reparaciones en garantía, asistencia técnica y recambios oficiales de las marcas líderes del sector.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 pt-2">
-                    <a href="#contacto" class="bg-bd-orange hover:bg-bd-orange-dark text-white font-bold px-8 py-4 rounded-xl text-center transition shadow-lg">
-                        Solicitar Asistencia
-                    </a>
+        
+        <div class="container mx-auto px-6 relative z-10 w-full h-full flex items-center">
+            
+            <div id="slide-1" class="slide absolute inset-x-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center opacity-100 pointer-events-auto">
+                <div class="space-y-6">
+                    <span class="inline-block bg-neutral-800 text-bd-orange text-xs font-bold uppercase tracking-widest px-3 py-1 rounded border border-neutral-700">
+                        Taller Autorizado Multimarca
+                    </span>
+                    <h2 class="font-title text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-none">
+                        ¿Tu herramienta necesita <span class="text-bd-orange">reparación oficial</span>?
+                    </h2>
+                    <p class="text-gray-400 text-lg max-w-lg">
+                        Somos el centro de confianza en Valencia. Gestionamos reparaciones en garantía, asistencia técnica y recambios oficiales de las marcas líderes del sector.
+                    </p>
+                    <div class="pt-2">
+                        <a href="#contacto" class="inline-block bg-bd-orange hover:bg-bd-orange-dark text-white font-bold px-8 py-4 rounded-xl text-center transition shadow-lg">
+                            Solicitar Asistencia
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:flex justify-center">
+                    <div class="border-4 border-neutral-800 bg-neutral-950 p-8 rounded-2xl shadow-2xl max-w-sm">
+                        <div class="text-bd-orange font-title text-5xl font-black mb-2">100%</div>
+                        <div class="text-white font-bold text-lg mb-1">Garantía Certificada</div>
+                        <p class="text-gray-400 text-sm">Tramitamos la cobertura de fabricante con repuestos directas de fábrica sin perder la validez legal de tu compra.</p>
+                    </div>
                 </div>
             </div>
-            <div class="hidden md:flex justify-center relative">
-                <div class="w-72 h-72 bg-bd-orange/20 rounded-full blur-3xl absolute top-10 left-10"></div>
-                <div class="border-4 border-neutral-800 bg-neutral-950 p-8 rounded-2xl shadow-2xl max-w-sm relative z-10">
-                    <div class="text-bd-orange font-title text-5xl font-black mb-2">100%</div>
-                    <div class="text-white font-bold text-lg mb-1">Garantía Certificada</div>
-                    <p class="text-gray-400 text-sm">Tramitamos la cobertura de fabricante con repuestos directos de fábrica sin perder la validez legal de tu compra.</p>
+
+            <div id="slide-2" class="slide absolute inset-x-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center opacity-0 pointer-events-none">
+                <div class="space-y-6">
+                    <span class="inline-block bg-bd-orange text-neutral-950 text-xs font-black uppercase tracking-widest px-3 py-1 rounded">
+                        Novedad Comercial
+                    </span>
+                    <h2 class="font-title text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-none">
+                        Renueva tus equipos con <span class="text-bd-orange">Garantía de Fábrica</span>
+                    </h2>
+                    <p class="text-gray-400 text-lg max-w-lg">
+                        Estrenamos sección de venta de maquinaria nueva. Consigue tus herramientas originales de DeWalt, Bosch, Black & Decker y Stanley con el respaldo directo de nuestro equipo.
+                    </p>
+                    <div class="pt-2">
+                        <a href="#servicios" class="inline-block bg-bd-orange hover:bg-bd-orange-dark text-white font-bold px-8 py-4 rounded-xl text-center transition shadow-lg">
+                            Ver Maquinaria Nueva
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:flex justify-center">
+                    <div class="border-4 border-neutral-800 bg-neutral-950 p-8 rounded-2xl shadow-2xl max-w-sm">
+                        <div class="text-bd-orange font-title text-5xl font-black mb-2">🛒</div>
+                        <div class="text-white font-bold text-lg mb-1">Catálogo Oficial</div>
+                        <p class="text-gray-400 text-sm">Adquiere tus nuevas máquinas directamente en Valencia con asesoramiento preventivo y cobertura técnica total postventa.</p>
+                    </div>
                 </div>
             </div>
+
         </div>
+
+        <button onclick="changeSlide(-1)" class="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/30 hover:bg-black/60 p-3 rounded-full text-white transition cursor-pointer" aria-label="Anterior diapositiva">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <button onclick="changeSlide(1)" class="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/30 hover:bg-black/60 p-3 rounded-full text-white transition cursor-pointer" aria-label="Siguiente diapositiva">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </button>
     </section>
 
-    <section id="marcas" class="py-16 bg-neutral-100 border-b border-gray-200">
-        <div class="container mx-auto px-6">
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <h2 class="font-title text-3xl font-extrabold text-neutral-900 tracking-tight">Somos Casa de Garantía Oficial de:</h2>
+    
+    <section id="ventas" class="py-20 bg-white text-gray-800 border-t border-gray-200 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-30 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-3xl mb-12 space-y-4">
+                <span class="inline-block bg-bd-orange text-white text-xs font-black uppercase tracking-widest px-3 py-1 rounded">
+                    Catálogo de Tienda
+                </span>
+                <h2 class="font-title text-3xl md:text-4xl font-black tracking-tight text-neutral-900">
+                    Venta de Maquinaria Nueva
+                </h2>
+                <p class="text-gray-600 text-base leading-relaxed">
+                    Somos distribuidores autorizados. Encuentra las últimas herramientas de las marcas que representamos con asesoramiento experto.
+                </p>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 items-center justify-items-center">
-                
-                <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm text-center w-full max-w-[280px] flex flex-col justify-between h-60 transform hover:scale-105 transition-transform duration-300">
-                    <div class="flex items-center justify-center flex-grow p-2">
-                        <img src="img/logo-black-decker.png" alt="Black & Decker" class="h-20 w-full object-contain">
-                    </div>
-                    <div>
-                        <span class="font-title font-bold text-xs text-neutral-800 block uppercase tracking-wider">Black & Decker</span>
-                        <span class="bg-amber-500/10 text-amber-700 px-2 py-0.5 rounded text-[10px] font-bold inline-block mt-2">GARANTÍA OFICIAL</span>
-                    </div>
-                </div>
 
-                <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm text-center w-full max-w-[280px] flex flex-col justify-between h-60 transform hover:scale-105 transition-transform duration-300">
-                    <div class="flex items-center justify-center flex-grow p-2">
-                        <img src="img/logo-dewalt.png" alt="DeWalt" class="h-18 w-full object-contain">
+            <div class="relative w-full overflow-hidden">
+                <div id="product-track" class="flex gap-6 transition-transform duration-500 ease-in-out" style="transform: translateX(0px);">
+                    
+                    <div class="min-w-[calc(100%-0px)] sm:min-w-[calc(50%-12px)] lg:min-w-[calc(25%-18px)] bg-neutral-950 p-6 rounded-2xl border border-neutral-800 flex flex-col justify-between h-[360px] shadow-xl">
+                        <div>
+                            <span class="text-xs font-bold text-bd-orange uppercase tracking-wider">DeWalt</span>
+                            <h4 class="font-title font-bold text-base mt-1 text-white">Taladro Percutor XR 18V</h4>
+                            <p class="text-xs text-gray-400 mt-2 leading-relaxed">Máxima potencia sin cables para perforaciones exigentes en hormigón y mampostería.</p>
+                        </div>
+                        <div class="border-t border-neutral-800 pt-4 mt-4 flex items-center justify-between">
+                            <span class="text-xs bg-neutral-900 px-2.5 py-1 rounded text-gray-300 font-mono font-bold border border-neutral-800">Top 1</span>
+                            <span class="text-xs text-bd-orange font-bold tracking-wide">Consultar stock</span>
+                        </div>
                     </div>
-                    <div>
-                        <span class="font-title font-bold text-xs text-neutral-800 block uppercase tracking-wider">DeWalt</span>
-                        <span class="bg-amber-500/10 text-amber-700 px-2 py-0.5 rounded text-[10px] font-bold inline-block mt-2">GARANTÍA OFICIAL</span>
-                    </div>
-                </div>
 
-                <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm text-center w-full max-w-[280px] flex flex-col justify-between h-60 transform hover:scale-105 transition-transform duration-300">
-                    <div class="flex items-center justify-center flex-grow p-2">
-                        <img src="img/logo-stanley.png" alt="Stanley" class="h-20 w-full object-contain">
+                    <div class="min-w-[calc(100%-0px)] sm:min-w-[calc(50%-12px)] lg:min-w-[calc(25%-18px)] bg-neutral-950 p-6 rounded-2xl border border-neutral-800 flex flex-col justify-between h-[360px] shadow-xl">
+                        <div>
+                            <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">Bosch Professional</span>
+                            <h4 class="font-title font-bold text-base mt-1 text-white">Amoladora Angular GWS</h4>
+                            <p class="text-xs text-gray-400 mt-2 leading-relaxed">Protección electrónica contra rearranque y motor de alto rendimiento para corte industrial.</p>
+                        </div>
+                        <div class="border-t border-neutral-800 pt-4 mt-4 flex items-center justify-between">
+                            <span class="text-xs bg-neutral-900 px-2.5 py-1 rounded text-gray-300 font-mono font-bold border border-neutral-800">Top 2</span>
+                            <span class="text-xs text-bd-orange font-bold tracking-wide">Consultar stock</span>
+                        </div>
                     </div>
-                    <div>
-                        <span class="font-title font-bold text-xs text-neutral-800 block uppercase tracking-wider">Stanley</span>
-                        <span class="bg-amber-500/10 text-amber-700 px-2 py-0.5 rounded text-[10px] font-bold inline-block mt-2">GARANTÍA OFICIAL</span>
-                    </div>
-                </div>
 
-                <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm text-center w-full max-w-[280px] flex flex-col justify-between h-60 transform hover:scale-105 transition-transform duration-300">
-                    <div class="flex items-center justify-center flex-grow p-2">
-                        <img src="img/logo-bosch.png" alt="Bosch" class="h-20 w-full object-contain">
+                    <div class="min-w-[calc(100%-0px)] sm:min-w-[calc(50%-12px)] lg:min-w-[calc(25%-18px)] bg-neutral-950 p-6 rounded-2xl border border-neutral-800 flex flex-col justify-between h-[360px] shadow-xl">
+                        <div>
+                            <span class="text-xs font-bold text-yellow-500 uppercase tracking-wider">Stanley</span>
+                            <h4 class="font-title font-bold text-base mt-1 text-white">Sierra Circular FatMax</h4>
+                            <p class="text-xs text-gray-400 mt-2 leading-relaxed">Zapata de magnesio y guía láser para cortes longitudinales milimétricos y limpios.</p>
+                        </div>
+                        <div class="border-t border-neutral-800 pt-4 mt-4 flex items-center justify-between">
+                            <span class="text-xs bg-neutral-900 px-2.5 py-1 rounded text-gray-300 font-mono font-bold border border-neutral-800">Top 3</span>
+                            <span class="text-xs text-bd-orange font-bold tracking-wide">Consultar stock</span>
+                        </div>
                     </div>
-                    <div>
-                        <span class="font-title font-bold text-xs text-neutral-800 block uppercase tracking-wider">Bosch</span>
-                        <span class="bg-amber-500/10 text-amber-700 px-2 py-0.5 rounded text-[10px] font-bold inline-block mt-2">GARANTÍA OFICIAL</span>
-                    </div>
-                </div>
 
+                    <div class="min-w-[calc(100%-0px)] sm:min-w-[calc(50%-12px)] lg:min-w-[calc(25%-18px)] bg-neutral-950 p-6 rounded-2xl border border-neutral-800 flex flex-col justify-between h-[360px] shadow-xl">
+                        <div>
+                            <span class="text-xs font-bold text-orange-500 uppercase tracking-wider">Black & Decker</span>
+                            <h4 class="font-title font-bold text-base mt-1 text-white">Cortasetos Li-Ion 18V</h4>
+                            <p class="text-xs text-gray-400 mt-2 leading-relaxed">Hoja de doble acción cortada al diamante. Perfecta ergonomía para mantenimiento de jardín.</p>
+                        </div>
+                        <div class="border-t border-neutral-800 pt-4 mt-4 flex items-center justify-between">
+                            <span class="text-xs bg-neutral-900 px-2.5 py-1 rounded text-gray-300 font-mono font-bold border border-neutral-800">Top 4</span>
+                            <span class="text-xs text-bd-orange font-bold tracking-wide">Consultar stock</span>
+                        </div>
+                    </div>
+
+                    <div class="min-w-[calc(100%-0px)] sm:min-w-[calc(50%-12px)] lg:min-w-[calc(25%-18px)] bg-neutral-950 p-6 rounded-2xl border border-neutral-800 flex flex-col justify-between h-[360px] shadow-xl">
+                        <div>
+                            <span class="text-xs font-bold text-bd-orange uppercase tracking-wider">DeWalt</span>
+                            <h4 class="font-title font-bold text-base mt-1 text-white">Atornillador de Impacto</h4>
+                            <p class="text-xs text-gray-400 mt-2 leading-relaxed">Estructura ultra compacta de 3 velocidades para fijaciones estructurales de alta resistencia.</p>
+                        </div>
+                        <div class="border-t border-neutral-800 pt-4 mt-4 flex items-center justify-between">
+                            <span class="text-xs bg-neutral-900 px-2.5 py-1 rounded text-gray-300 font-mono font-bold border border-neutral-800">Top 5</span>
+                            <span class="text-xs text-bd-orange font-bold tracking-wide">Consultar stock</span>
+                        </div>
+                    </div>
+
+                    <div class="min-w-[calc(100%-0px)] sm:min-w-[calc(50%-12px)] lg:min-w-[calc(25%-18px)] bg-neutral-950 p-6 rounded-2xl border border-neutral-800 flex flex-col justify-between h-[360px] shadow-xl">
+                        <div>
+                            <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">Bosch Professional</span>
+                            <h4 class="font-title font-bold text-base mt-1 text-white">Martillo Perforador SDS-Plus</h4>
+                            <p class="text-xs text-gray-400 mt-2 leading-relaxed">Sistema de amortiguación Vibration Control para un trabajo continuo y estable en obra.</p>
+                        </div>
+                        <div class="border-t border-neutral-800 pt-4 mt-4 flex items-center justify-between">
+                            <span class="text-xs bg-neutral-900 px-2.5 py-1 rounded text-gray-300 font-mono font-bold border border-neutral-800">Top 6</span>
+                            <span class="text-xs text-bd-orange font-bold tracking-wide">Consultar stock</span>
+                        </div>
+                    </div>
+
+                    <div class="min-w-[calc(100%-0px)] sm:min-w-[calc(50%-12px)] lg:min-w-[calc(25%-18px)] bg-neutral-950 p-6 rounded-2xl border border-neutral-800 flex flex-col justify-between h-[360px] shadow-xl">
+                        <div>
+                            <span class="text-xs font-bold text-yellow-500 uppercase tracking-wider">Stanley</span>
+                            <h4 class="font-title font-bold text-base mt-1 text-white">Lijadora Orbital FatMax</h4>
+                            <p class="text-xs text-gray-400 mt-2 leading-relaxed">Extracción de polvo integrada y velocidad variable para acabados limpios en madera.</p>
+                        </div>
+                        <div class="border-t border-neutral-800 pt-4 mt-4 flex items-center justify-between">
+                            <span class="text-xs bg-neutral-900 px-2.5 py-1 rounded text-gray-300 font-mono font-bold border border-neutral-800">Top 7</span>
+                            <span class="text-xs text-bd-orange font-bold tracking-wide">Consultar stock</span>
+                        </div>
+                    </div>
+
+                    <div class="min-w-[calc(100%-0px)] sm:min-w-[calc(50%-12px)] lg:min-w-[calc(25%-18px)] bg-neutral-950 p-6 rounded-2xl border border-neutral-800 flex flex-col justify-between h-[360px] shadow-xl">
+                        <div>
+                            <span class="text-xs font-bold text-orange-500 uppercase tracking-wider">Black & Decker</span>
+                            <h4 class="font-title font-bold text-base mt-1 text-white">Aspirador de Mano Dustbuster</h4>
+                            <p class="text-xs text-gray-400 mt-2 leading-relaxed">Acción ciclónica con boquilla extensible para la limpieza rápida en vehículos o banco de taller.</p>
+                        </div>
+                        <div class="border-t border-neutral-800 pt-4 mt-4 flex items-center justify-between">
+                            <span class="text-xs bg-neutral-900 px-2.5 py-1 rounded text-gray-300 font-mono font-bold border border-neutral-800">Top 8</span>
+                            <span class="text-xs text-bd-orange font-semibold">Consultar stock</span>
+                        </div>
+                    </div>
+
+                    <div class="min-w-[calc(100%-0px)] sm:min-w-[calc(50%-12px)] lg:min-w-[calc(25%-18px)] bg-neutral-950 p-6 rounded-2xl border border-neutral-800 flex flex-col justify-between h-[360px] shadow-xl">
+                        <div>
+                            <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">Bosch Professional</span>
+                            <h4 class="font-title font-bold text-base mt-1 text-white">Ingletadora Telescópica</h4>
+                            <p class="text-xs text-gray-400 mt-2 leading-relaxed">Gran capacidad de corte horizontal y vertical con ajuste de inclinación milimétrico.</p>
+                        </div>
+                        <div class="border-t border-neutral-800 pt-4 mt-4 flex items-center justify-between">
+                            <span class="text-xs bg-neutral-900 px-2.5 py-1 rounded text-gray-300 font-mono font-bold border border-neutral-800">Top 9</span>
+                            <span class="text-xs text-bd-orange font-bold tracking-wide">Consultar stock</span>
+                        </div>
+                    </div>
+
+                    <div class="min-w-[calc(100%-0px)] sm:min-w-[calc(50%-12px)] lg:min-w-[calc(25%-18px)] bg-neutral-950 p-6 rounded-2xl border border-neutral-800 flex flex-col justify-between h-[360px] shadow-xl">
+                        <div>
+                            <span class="text-xs font-bold text-bd-orange uppercase tracking-wider">DeWalt</span>
+                            <h4 class="font-title font-bold text-base mt-1 text-white">Nivel Láser 360°</h4>
+                            <p class="text-xs text-gray-400 mt-2 leading-relaxed">Línea verde de alta visibilidad autonivelante para replanteos perfectos en obra.</p>
+                        </div>
+                        <div class="border-t border-neutral-800 pt-4 mt-4 flex items-center justify-between">
+                            <span class="text-xs bg-neutral-900 px-2.5 py-1 rounded text-gray-300 font-mono font-bold border border-neutral-800">Top 10</span>
+                            <span class="text-xs text-bd-orange font-bold tracking-wide">Consultar stock</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="flex justify-end gap-3 mt-6">
+                <button onclick="prevProduct()" class="bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 p-3 rounded-full text-white transition shadow-md cursor-pointer" aria-label="Anterior Producto">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                </button>
+                <button onclick="nextProduct()" class="bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 p-3 rounded-full text-white transition shadow-md cursor-pointer" aria-label="Siguiente Producto">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </button>
+            </div>
+            
+            <div class="mt-12 max-w-xs mx-auto">
+                <button class="w-full bg-neutral-900 text-gray-400 border border-neutral-800 font-semibold px-4 py-3.5 rounded-xl text-xs flex items-center justify-center gap-2 cursor-not-allowed shadow-md" title="Catálogo Completo en preparación">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                    Descargar Catálogo Completo (Próximamente)
+                </button>
             </div>
         </div>
     </section>
@@ -134,7 +314,53 @@
         </div>
     </section>
 
-<section id="ventajas" class="py-20 bg-neutral-50 border-t border-b border-gray-100">
+    <section id="marcas" class="py-16 bg-neutral-100 border-b border-gray-200">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="font-title text-3xl font-extrabold text-neutral-900 tracking-tight">Somos Casa de Garantía Oficial de:</h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 items-center justify-items-center">
+                <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm text-center w-full max-w-[280px] flex flex-col justify-between h-60 transform hover:scale-105 transition-transform duration-300">
+                    <div class="flex items-center justify-center flex-grow p-2">
+                        <img src="img/logo-black-decker.png" alt="Black & Decker" class="h-20 w-full object-contain">
+                    </div>
+                    <div>
+                        <span class="font-title font-bold text-xs text-neutral-800 block uppercase tracking-wider">Black & Decker</span>
+                        <span class="bg-amber-500/10 text-amber-700 px-2 py-0.5 rounded text-[10px] font-bold inline-block mt-2">GARANTÍA OFICIAL</span>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm text-center w-full max-w-[280px] flex flex-col justify-between h-60 transform hover:scale-105 transition-transform duration-300">
+                    <div class="flex items-center justify-center flex-grow p-2">
+                        <img src="img/logo-dewalt.png" alt="DeWalt" class="h-20 w-full object-contain">
+                    </div>
+                    <div>
+                        <span class="font-title font-bold text-xs text-neutral-800 block uppercase tracking-wider">DeWalt</span>
+                        <span class="bg-amber-500/10 text-amber-700 px-2 py-0.5 rounded text-[10px] font-bold inline-block mt-2">GARANTÍA OFICIAL</span>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm text-center w-full max-w-[280px] flex flex-col justify-between h-60 transform hover:scale-105 transition-transform duration-300">
+                    <div class="flex items-center justify-center flex-grow p-2">
+                        <img src="img/logo-stanley.png" alt="Stanley" class="h-20 w-full object-contain">
+                    </div>
+                    <div>
+                        <span class="font-title font-bold text-xs text-neutral-800 block uppercase tracking-wider">Stanley</span>
+                        <span class="bg-amber-500/10 text-amber-700 px-2 py-0.5 rounded text-[10px] font-bold inline-block mt-2">GARANTÍA OFICIAL</span>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm text-center w-full max-w-[280px] flex flex-col justify-between h-60 transform hover:scale-105 transition-transform duration-300">
+                    <div class="flex items-center justify-center flex-grow p-2">
+                        <img src="img/logo-bosch.png" alt="Bosch" class="h-20 w-full object-contain">
+                    </div>
+                    <div>
+                        <span class="font-title font-bold text-xs text-neutral-800 block uppercase tracking-wider">Bosch</span>
+                        <span class="bg-amber-500/10 text-amber-700 px-2 py-0.5 rounded text-[10px] font-bold inline-block mt-2">GARANTÍA OFICIAL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ventajas" class="py-20 bg-neutral-50 border-t border-b border-gray-100">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div>
@@ -160,7 +386,7 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-neutral-900">Diagnóstico sin coste</h4>
-                                <p class="text-gray-600 text-sm">Tu tranquilidad es lo primero. Evaluamos tu herramienta de forma gratuita y te damos un presupuesto sin compromiso.</p>
+                                <p class="text-gray-600 text-sm">Sabemos que tu tiempo es valioso. Ofrecemos diagnóstico sin coste y presupuestos claros en plazos ajustados.</p>
                             </div>
                         </div>
                         <div class="flex gap-4">
@@ -189,7 +415,6 @@
         
         <div class="container mx-auto px-6 mt-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
                 <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-xs">
                     <div class="flex justify-between items-center mb-1">
                         <span class="font-bold text-neutral-900 text-xs">Carlos M.</span>
@@ -199,7 +424,6 @@
                         "Excelente servicio técnico. Llevé un taladro DeWalt en garantía y lo gestionaron rapidísimo. Sin sorpresas ni costes ocultos, totalmente recomendables."
                     </p>
                 </div>
-
                 <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-xs">
                     <div class="flex justify-between items-center mb-1">
                         <span class="font-bold text-neutral-900 text-xs">María José V.</span>
@@ -209,7 +433,6 @@
                         "Muy profesionales. Tenía una amoladora Bosch antigua que daba por perdida y la dejaron como nueva. Tienen stock de recambios originales en la misma tienda."
                     </p>
                 </div>
-
             </div>
         </div>
     </section>
@@ -221,14 +444,24 @@
                     <div>
                         <h2 class="font-title text-3xl font-extrabold text-neutral-900 mb-3">Contacto y Cita Previa</h2>
                     </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
-                        <div class="bg-gray-50 p-4 rounded-xl border border-gray-100">
-                            <span class="font-bold text-neutral-900 block mb-1">📍 Dirección</span>
-                            <span class="text-gray-600">C/ de Sant Ignasi de Loiola, 23<br>Extramurs, 46008 València</span>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
+                        <div class="bg-gray-50 p-4 rounded-xl border border-gray-100 flex flex-col justify-between">
+                            <div>
+                                <span class="font-bold text-neutral-900 block mb-1">📍 Dirección</span>
+                                <span class="text-gray-600 text-xs">C/ de Sant Ignasi de Loiola, 23<br>Extramurs, 46008 València</span>
+                            </div>
                         </div>
-                        <div class="bg-gray-50 p-4 rounded-xl border border-gray-100">
-                            <span class="font-bold text-neutral-900 block mb-1">📞 Teléfono</span>
-                            <span class="text-gray-600">Llámanos al:<br><a href="tel:+34963844805" class="text-bd-orange font-bold hover:underline">963 84 48 05</a></span>
+                        <div class="bg-gray-50 p-4 rounded-xl border border-gray-100 flex flex-col justify-between">
+                            <div>
+                                <span class="font-bold text-neutral-900 block mb-1">📞 Teléfono</span>
+                                <span class="text-gray-600 text-xs">Línea fija directa:<br><a href="tel:+34963844805" class="text-neutral-900 font-bold hover:underline">963 84 48 05</a></span>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-xl border border-green-100 bg-green-50/30 flex flex-col justify-between">
+                            <div>
+                                <span class="font-bold text-green-700 block mb-1">💬 WhatsApp</span>
+                                <span class="text-gray-600 text-xs">Consulta inmediata:<br><a href="https://wa.me/34963844805" target="_blank" rel="noopener noreferrer" class="text-green-600 font-bold hover:underline">Enviar Mensaje</a></span>
+                            </div>
                         </div>
                     </div>
                     <form class="space-y-4">
@@ -252,11 +485,10 @@
             </div>
         </div>
     </section>
+
     <footer class="bg-neutral-900 text-gray-400 text-sm border-t border-neutral-800 pt-16 pb-8 mt-20">
         <div class="container mx-auto px-6">
-            
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-12 border-b border-neutral-800">
-                
                 <div class="space-y-4">
                     <div>
                         <span class="font-title text-xl font-black text-white tracking-tight block">SERVI-GONZÁLEZ</span>
@@ -266,7 +498,6 @@
                         Centro de confianza en Valencia especializado en la reparación, mantenimiento y gestión de garantías para herramientas líderes del sector.
                     </p>
                 </div>
-
                 <div>
                     <h4 class="text-white font-bold mb-4 text-xs uppercase tracking-widest text-neutral-200">Sitemap</h4>
                     <ul class="space-y-2.5 text-xs">
@@ -277,7 +508,6 @@
                         <li><a href="#contacto" class="hover:text-white hover:underline transition">Ubicación y Contacto</a></li>
                     </ul>
                 </div>
-
                 <div>
                     <h4 class="text-white font-bold mb-4 text-xs uppercase tracking-widest text-neutral-200">Contacto</h4>
                     <ul class="space-y-3 text-xs">
@@ -295,20 +525,16 @@
                         </li>
                     </ul>
                 </div>
-
                 <div class="space-y-4">
                     <h4 class="text-white font-bold mb-4 text-xs uppercase tracking-widest text-neutral-200">Garantía Certificada</h4>
                     <p class="text-neutral-400 text-xs leading-relaxed">
                         Trabajamos exclusivamente con repuestos originales de fábrica, manteniendo la validez de compra de tus equipos Black & Decker, DeWalt, Stanley y Bosch.
                     </p>
-                    <div class="inline-flex items-center gap-2 bg-neutral-950 px-3 py-2 rounded-lg border border-neutral-800">
-                        <span class="text-bd-orange text-base">🛡️</span>
-                        <span class="text-[11px] text-gray-300 font-medium uppercase tracking-wider">Taller Autorizado Valencia</span>
+                    <div class="grid grid-cols-1 bg-neutral-950 px-3 py-2 rounded-lg border border-neutral-800">
+                        <span class="text-[11px] text-gray-300 font-medium uppercase tracking-wider text-center">🛡️ Taller Autorizado Valencia</span>
                     </div>
                 </div>
-
             </div>
-
             <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-neutral-500">
                 <div>
                     &copy; 2026 SERVI-GONZÁLEZ. Todos los derechos reservados.
@@ -316,11 +542,139 @@
                 <div class="flex flex-wrap gap-x-6 gap-y-2 justify-center">
                     <a href="#aviso-legal" class="hover:text-neutral-300 transition">Aviso Legal</a>
                     <a href="#privacidad" class="hover:text-neutral-300 transition">Política de Privacidad</a>
-                    <a href="#cookies" class="hover:text-neutral-300 transition">Cookies</a>
+                    <a href="#cookies" class="hover:text-neutral-300 transition">Política de Cookies</a>
+                    <a href="#terminos" class="hover:text-neutral-300 transition">Términos y Condiciones</a>
                 </div>
             </div>
-
         </div>
     </footer>
+
+    <a href="https://wa.me/34963844805?text=Hola!%20Necesito%20consultar%20por%20la%20reparaci%C3%B3n%20de%20una%20herramienta." 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="fixed bottom-6 right-6 z-[90] bg-[#25D366] hover:bg-[#20ba5a] text-white p-4 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 group"
+       aria-label="Contactar por WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.93 0c3.167.001 6.145 1.233 8.384 3.472 2.239 2.239 3.469 5.218 3.467 8.387-.006 6.582-5.342 11.93-11.875 11.93-2.012-.002-3.993-.513-5.752-1.487L0 24zm6.49-4.144c1.649.979 3.262 1.489 4.912 1.49 5.305-.005 9.622-4.321 9.626-9.626.002-2.57-1.002-4.986-2.825-6.81-1.821-1.822-4.234-2.824-6.804-2.825-5.307 0-9.624 4.318-9.629 9.625-.002 1.722.463 3.4 1.345 4.9l-.994 3.633 3.737-.982zM17.17 14.7c-.29-.145-1.72-.85-1.99-.95-.268-.1-.465-.145-.66.145-.195.29-.755.95-.925 1.14-.17.19-.34.215-.63.07-.29-.145-1.225-.45-2.335-1.44-.863-.77-1.445-1.72-1.615-2.01-.17-.29-.018-.448.128-.59.13-.13.29-.34.435-.51.145-.17.19-.29.29-.485.1-.19.05-.36-.025-.51-.075-.145-.66-1.59-.905-2.18-.24-.57-.48-.49-.66-.5-.17-.01-.365-.01-.56-.01-.195 0-.51.075-.775.365-.265.29-1.01.99-1.01 2.415 0 1.425 1.04 2.8 1.185 3 .145.19 2.05 3.13 4.965 4.385.695.3 1.235.48 1.66.615.7.22 1.335.19 1.84.115.56-.085 1.72-.7 1.96-1.38.24-.68.24-1.265.17-1.38-.075-.115-.265-.195-.555-.34z"/>
+        </svg>
+        <span class="absolute right-16 bg-neutral-900 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-md pointer-events-none">
+            ¿Hablamos por WhatsApp? 💬
+        </span>
+    </a>
+
+    <script>
+        // --- LÓGICA DEL POPUP ---
+        window.addEventListener('DOMContentLoaded', () => {
+            const popup = document.getElementById('popup-bienvenida');
+            const card = popup.querySelector('.transform');
+            setTimeout(() => {
+                popup.classList.remove('opacity-0', 'pointer-events-none');
+                popup.classList.add('opacity-100');
+                card.classList.remove('scale-95');
+                card.classList.add('scale-100');
+            }, 1500);
+        });
+
+        function cerrarPopup() {
+            const popup = document.getElementById('popup-bienvenida');
+            const card = popup.querySelector('.transform');
+            card.classList.remove('scale-100');
+            card.classList.add('scale-95');
+            popup.classList.remove('opacity-100');
+            popup.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        // --- LÓGICA DEL SLIDER PRINCIPAL (HERO) ---
+        let currentSlide = 1;
+        const totalSlides = 2;
+        let slideInterval;
+
+        function showSlide(slideIndex) {
+            const s1 = document.getElementById('slide-1');
+            const s2 = document.getElementById('slide-2');
+            if (slideIndex === 1) {
+                s1.classList.replace('opacity-0', 'opacity-100');
+                s1.classList.replace('pointer-events-none', 'pointer-events-auto');
+                s2.classList.replace('opacity-100', 'opacity-0');
+                s2.classList.replace('pointer-events-auto', 'pointer-events-none');
+                currentSlide = 1;
+            } else {
+                s2.classList.replace('opacity-0', 'opacity-100');
+                s2.classList.replace('pointer-events-none', 'pointer-events-auto');
+                s1.classList.replace('opacity-100', 'opacity-0');
+                s1.classList.replace('pointer-events-auto', 'pointer-events-none');
+                currentSlide = 2;
+            }
+        }
+
+        function changeSlide(direction) {
+            clearInterval(slideInterval);
+            let nextSlide = currentSlide + direction;
+            if (nextSlide > totalSlides) nextSlide = 1;
+            if (nextSlide < 1) nextSlide = totalSlides;
+            showSlide(nextSlide);
+            startAutoSlide();
+        }
+
+        function startAutoSlide() {
+            slideInterval = setInterval(() => {
+                let nextSlide = currentSlide + 1;
+                if (nextSlide > totalSlides) nextSlide = 1;
+                showSlide(nextSlide);
+            }, 5000);
+        }
+        startAutoSlide();
+
+        // --- LÓGICA DEL CARRUSEL DE PRODUCTOS (TOP 10 EN #VENTAS) ---
+        let productIndex = 0;
+        let productInterval;
+
+        function getVisibleCards() {
+            if (window.innerWidth >= 1024) return 4; 
+            if (window.innerWidth >= 640) return 2;  
+            return 1;                                
+        }
+
+        function updateProductSlider() {
+            const track = document.getElementById('product-track');
+            if (!track) return;
+            const cardsVisible = getVisibleCards();
+            const totalProducts = 10;
+            const gap = 24; // Brecha de la rejilla (24px)
+            
+            const maxIndex = totalProducts - cardsVisible;
+            if (productIndex > maxIndex) productIndex = 0;
+            if (productIndex < 0) productIndex = maxIndex;
+
+            const cardWidth = track.firstElementChild.getBoundingClientRect().width;
+            const amountToMove = productIndex * (cardWidth + gap);
+            
+            track.style.transform = `translateX(-${amountToMove}px)`;
+        }
+
+        function nextProduct() {
+            clearInterval(productInterval);
+            productIndex++;
+            updateProductSlider();
+            startProductAutoSlide();
+        }
+
+        function prevProduct() {
+            clearInterval(productInterval);
+            productIndex--;
+            updateProductSlider();
+            startProductAutoSlide();
+        }
+
+        function startProductAutoSlide() {
+            productInterval = setInterval(() => {
+                productIndex++;
+                updateProductSlider();
+            }, 4000);
+        }
+
+        startProductAutoSlide();
+        window.addEventListener('resize', updateProductSlider);
+    </script>
 </body>
 </html>
