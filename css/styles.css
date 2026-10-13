@@ -1,17 +1,33 @@
+/* Tipografías autoalojadas (sin peticiones a Google Fonts) */
+@font-face {
+    font-family: 'Inter Variable';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 100 900;
+    src: url('../fonts/inter-latin-wght-normal.woff2') format('woff2-variations');
+}
+
+@font-face {
+    font-family: 'Montserrat Variable';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 100 900;
+    src: url('../fonts/montserrat-latin-wght-normal.woff2') format('woff2-variations');
+}
+
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter Variable', 'Inter', sans-serif;
 }
 
-.font-title {
-    font-family: 'Montserrat', sans-serif;
+/* Animación suave para la transición de las diapositivas */
+.slide {
+    transition: opacity 0.6s ease-in-out;
 }
 
-.bg-bd-orange { background-color: #FF6600; }
-.text-bd-orange { color: #FF6600; }
-.border-bd-orange { border-color: #FF6600; }
-.hover\:bg-bd-orange-dark:hover { background-color: #E05500; }
-
-.error-fallback {
-    background-color: #f3f4f6;
-    min-height: 48px;
-}
+/* Contenido de las páginas legales */
+.legal h2 { font-family: 'Montserrat Variable', sans-serif; font-weight: 800; font-size: 1.25rem; color: #171717; margin: 2rem 0 0.75rem; }
+.legal p, .legal li { color: #4b5563; font-size: 0.95rem; line-height: 1.7; }
+.legal p { margin-bottom: 0.9rem; }
+.legal ul { list-style: disc; padding-left: 1.25rem; margin-bottom: 0.9rem; }
+.legal a { color: #E05500; text-decoration: underline; }
+.legal strong { color: #171717; }

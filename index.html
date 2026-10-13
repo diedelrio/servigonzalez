@@ -3,18 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servi-González - Servicio Técnico Oficial Multimarca Valencia</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Servi-González - Servicio Técnico Multimarca en Valencia</title>
+    <meta name="description" content="Servicio técnico en Valencia para herramientas DeWalt, Black &amp; Decker, Stanley y Bosch: reparaciones en garantía, presupuestos en 72 h, recambios y venta de maquinaria. Solicita la recogida online.">
+    <link rel="canonical" href="https://www.servicegonzalez.es/">
+    <meta name="theme-color" content="#171717">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="Servi-González">
+    <meta property="og:title" content="Servi-González - Servicio Técnico Multimarca en Valencia">
+    <meta property="og:description" content="Reparaciones en garantía, recambios y venta de maquinaria DeWalt, Black &amp; Decker, Stanley y Bosch en Valencia.">
+    <meta property="og:url" content="https://www.servicegonzalez.es/">
+    <meta property="og:image" content="https://www.servicegonzalez.es/img/logo-dewalt.png">
+    <meta name="twitter:card" content="summary">
+
+    <link rel="preload" href="fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/montserrat-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/tailwind.css">
     <link rel="stylesheet" href="css/styles.css">
-    <style>
-        /* Animación suave para la transición de las diapositivas */
-        .slide {
-            transition: opacity 0.6s ease-in-out;
-        }
-    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Servi-González",
+        "description": "Servicio técnico multimarca en Valencia: reparaciones en garantía, recambios y venta de maquinaria DeWalt, Black & Decker, Stanley y Bosch.",
+        "url": "https://www.servicegonzalez.es/",
+        "telephone": "+34963844805",
+        "email": "contacto@servicegonzalez.es",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "C/ de Sant Ignasi de Loiola, 23",
+            "addressLocality": "València",
+            "postalCode": "46008",
+            "addressRegion": "Valencia",
+            "addressCountry": "ES"
+        },
+        "openingHoursSpecification": [
+            { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "14:00" },
+            { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "16:00", "closes": "19:00" }
+        ],
+        "brand": [
+            { "@type": "Brand", "name": "DeWalt" },
+            { "@type": "Brand", "name": "Black & Decker" },
+            { "@type": "Brand", "name": "Stanley" },
+            { "@type": "Brand", "name": "Bosch" }
+        ]
+    }
+    </script>
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased">
 
@@ -44,6 +81,15 @@
         </div>
     </div>
 
+    <div id="modal-app" class="fixed inset-0 z-[110] flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs transition-opacity duration-300 opacity-0 pointer-events-none" role="dialog" aria-modal="true" aria-label="Gestión de reparaciones">
+        <div class="relative w-full max-w-[650px] h-[700px] max-h-[92vh] py-7 px-6 bg-white border border-gray-200 rounded-2xl shadow-2xl overflow-hidden">
+            <button type="button" id="modal-app-close" class="absolute top-3 right-3 z-10 text-gray-400 hover:text-gray-900 bg-gray-50 hover:bg-gray-100 p-2 rounded-full transition cursor-pointer" aria-label="Cerrar ventana">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+            <iframe id="modal-app-frame" title="" class="w-full h-full block border-0"></iframe>
+        </div>
+    </div>
+
     <header class="sticky top-0 z-50 bg-neutral-900 text-white shadow-md">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div>
@@ -58,13 +104,35 @@
                 <a href="#ventajas" class="hover:text-white transition">Por qué elegirnos</a>
                 <a href="#contacto" class="hover:text-white transition">Ubicación</a>
             </nav>
-            <div>
-                <a href="tel:+34963844805" class="bg-bd-orange hover:bg-bd-orange-dark text-white font-semibold px-5 py-2.5 rounded-lg text-sm transition shadow-sm flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                    963 84 48 05
+            <div class="flex items-center gap-3">
+                <a href="#" data-config-url="app" target="_blank" rel="noopener" class="hidden lg:block border border-neutral-600 hover:border-bd-orange text-white font-semibold px-4 py-2.5 rounded-lg text-sm transition whitespace-nowrap">
+                    Acceder a la app
                 </a>
+                <button type="button" data-modal-open="solicitarReparacion" data-modal-title="Solicitar recogida y reparación" class="hidden sm:block border border-neutral-600 hover:border-bd-orange text-white font-semibold px-4 py-2.5 rounded-lg text-sm transition whitespace-nowrap cursor-pointer">
+                    Solicitar reparación
+                </button>
+                <a href="tel:+34963844805" aria-label="Llamar al 963 84 48 05" class="bg-bd-orange hover:bg-bd-orange-dark text-white font-semibold px-3 sm:px-5 py-2.5 rounded-lg text-sm transition shadow-sm flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                    <span class="hidden lg:inline">963 84 48 05</span>
+                </a>
+                <button type="button" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden text-white p-2 rounded-lg hover:bg-neutral-800 transition cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
             </div>
         </div>
+        <nav id="mobile-menu" class="hidden md:hidden border-t border-neutral-800 bg-neutral-900 px-6 py-4 space-y-1 text-sm text-gray-300" aria-label="Menú principal">
+            <a href="#inicio" class="block py-2.5 hover:text-white">Inicio</a>
+            <a href="#ventas" class="block py-2.5 hover:text-white">Venta de Maquinaria</a>
+            <a href="#servicios" class="block py-2.5 hover:text-white">Servicios</a>
+            <a href="#marcas" class="block py-2.5 hover:text-white">Garantías Oficiales</a>
+            <a href="#ventajas" class="block py-2.5 hover:text-white">Por qué elegirnos</a>
+            <a href="#contacto" class="block py-2.5 hover:text-white">Ubicación</a>
+            <div class="pt-3 grid grid-cols-1 gap-3">
+                <button type="button" data-modal-open="solicitarReparacion" data-modal-title="Solicitar recogida y reparación" class="bg-bd-orange text-white font-bold py-3 rounded-xl cursor-pointer">Solicitar reparación</button>
+                <a href="#" data-config-url="app" target="_blank" rel="noopener" class="border border-neutral-700 text-white font-bold py-3 rounded-xl text-center">Acceder a la app</a>
+                <button type="button" data-modal-open="consultarReparacion" data-modal-title="Consultar estado de mi reparación" class="border border-neutral-700 text-white font-bold py-3 rounded-xl cursor-pointer">Consultar reparación</button>
+            </div>
+        </nav>
     </header>
 
     <section id="inicio" class="relative bg-neutral-900 text-white h-[600px] md:h-[550px] flex items-center overflow-hidden">
@@ -84,16 +152,16 @@
                         Somos el centro de confianza en Valencia. Gestionamos reparaciones en garantía, asistencia técnica y recambios oficiales de las marcas líderes del sector.
                     </p>
                     <div class="pt-2">
-                        <a href="#contacto" class="inline-block bg-bd-orange hover:bg-bd-orange-dark text-white font-bold px-8 py-4 rounded-xl text-center transition shadow-lg">
+                        <button type="button" data-modal-open="solicitarReparacion" data-modal-title="Solicitar recogida y reparación" class="inline-block bg-bd-orange hover:bg-bd-orange-dark text-white font-bold px-8 py-4 rounded-xl text-center transition shadow-lg cursor-pointer">
                             Solicitar Asistencia
-                        </a>
+                        </button>
                     </div>
                 </div>
                 <div class="hidden md:flex justify-center">
                     <div class="border-4 border-neutral-800 bg-neutral-950 p-8 rounded-2xl shadow-2xl max-w-sm">
                         <div class="text-bd-orange font-title text-5xl font-black mb-2">100%</div>
                         <div class="text-white font-bold text-lg mb-1">Garantía Certificada</div>
-                        <p class="text-gray-400 text-sm">Tramitamos la cobertura de fabricante con repuestos directas de fábrica sin perder la validez legal de tu compra.</p>
+                        <p class="text-gray-400 text-sm">Tramitamos la cobertura de fabricante con repuestos directos de fábrica sin perder la validez legal de tu compra.</p>
                     </div>
                 </div>
             </div>
@@ -110,7 +178,7 @@
                         Estrenamos sección de venta de maquinaria nueva. Consigue tus herramientas originales de DeWalt, Bosch, Black & Decker y Stanley con el respaldo directo de nuestro equipo.
                     </p>
                     <div class="pt-2">
-                        <a href="#servicios" class="inline-block bg-bd-orange hover:bg-bd-orange-dark text-white font-bold px-8 py-4 rounded-xl text-center transition shadow-lg">
+                        <a href="#ventas" class="inline-block bg-bd-orange hover:bg-bd-orange-dark text-white font-bold px-8 py-4 rounded-xl text-center transition shadow-lg">
                             Ver Maquinaria Nueva
                         </a>
                     </div>
@@ -295,25 +363,6 @@
         </div>
     </section>
 
-    <section id="servicios" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100">
-                    <h3 class="font-title text-xl font-bold text-neutral-900 mb-3">Tramitación de Garantías</h3>
-                    <p class="text-gray-600 text-sm">Reparamos tus herramientas sin costes bajo la cobertura oficial del fabricante.</p>
-                </div>
-                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100">
-                    <h3 class="font-title text-xl font-bold text-neutral-900 mb-3">Reparaciones Técnicas</h3>
-                    <p class="text-gray-600 text-sm">Arreglamos maquinaria fuera de garantía usando repuestos oficiales certificados.</p>
-                </div>
-                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100">
-                    <h3 class="font-title text-xl font-bold text-neutral-900 mb-3">Venta de Repuestos</h3>
-                    <p class="text-gray-600 text-sm">Amplio stock en Valencia de baterías, escobillas, cargadores y accesorios de las 4 marcas.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section id="marcas" class="py-16 bg-neutral-100 border-b border-gray-200">
         <div class="container mx-auto px-6">
             <div class="text-center max-w-2xl mx-auto mb-12">
@@ -412,28 +461,93 @@
                 </div>
             </div>
         </div>
-        
-        <div class="container mx-auto px-6 mt-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-xs">
-                    <div class="flex justify-between items-center mb-1">
-                        <span class="font-bold text-neutral-900 text-xs">Carlos M.</span>
-                        <span class="text-amber-400 text-[10px]">⭐⭐⭐⭐⭐</span>
-                    </div>
-                    <p class="text-gray-600 text-xs italic leading-relaxed">
-                        "Excelente servicio técnico. Llevé un taladro DeWalt en garantía y lo gestionaron rapidísimo. Sin sorpresas ni costes ocultos, totalmente recomendables."
-                    </p>
+    </section>
+
+    <section id="servicios" class="py-20 bg-neutral-900 text-white">
+        <div class="container mx-auto px-6">
+            <div class="mb-10 space-y-4">
+                <span class="inline-block bg-bd-orange text-white text-xs font-black uppercase tracking-widest px-3 py-1 rounded">
+                    Nuestros Servicios
+                </span>
+                <h2 class="font-title text-3xl md:text-4xl font-black tracking-tight">
+                    Garantías, reparaciones y repuestos en un solo lugar
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+                <div class="bg-neutral-950 border border-neutral-800 rounded-2xl p-6 md:p-8">
+                    <h3 class="font-title text-xl font-bold text-white mb-3">Tramitación de Garantías</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Reparamos tus herramientas sin costes bajo la cobertura oficial del fabricante.</p>
                 </div>
-                <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-xs">
-                    <div class="flex justify-between items-center mb-1">
-                        <span class="font-bold text-neutral-900 text-xs">María José V.</span>
-                        <span class="text-amber-400 text-[10px]">⭐⭐⭐⭐⭐</span>
-                    </div>
-                    <p class="text-gray-600 text-xs italic leading-relaxed">
-                        "Muy profesionales. Tenía una amoladora Bosch antigua que daba por perdida y la dejaron como nueva. Tienen stock de recambios originales en la misma tienda."
-                    </p>
+                <div class="bg-neutral-950 border border-neutral-800 rounded-2xl p-6 md:p-8">
+                    <h3 class="font-title text-xl font-bold text-white mb-3">Reparaciones Técnicas</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Arreglamos maquinaria fuera de garantía usando repuestos oficiales certificados.</p>
+                </div>
+                <div class="bg-neutral-950 border border-neutral-800 rounded-2xl p-6 md:p-8">
+                    <h3 class="font-title text-xl font-bold text-white mb-3">Venta de Repuestos</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Amplio stock en Valencia de baterías, escobillas, cargadores y accesorios de las 4 marcas.</p>
                 </div>
             </div>
+
+            <div id="reparacion" class="scroll-mt-24 mb-12 space-y-4">
+                <span class="inline-block border border-bd-orange text-bd-orange text-xs font-black uppercase tracking-widest px-3 py-1 rounded">
+                    Recogida y Reparación
+                </span>
+                <h2 class="font-title text-3xl md:text-4xl font-black tracking-tight">
+                    Envíanos tu herramienta averiada y nosotros nos encargamos del resto
+                </h2>
+                <p class="text-gray-400 leading-relaxed">
+                    Para solicitar la recogida y reparación usa los botones que aparecen más abajo y nos encargaremos de todo.
+                </p>
+                <p class="text-gray-400 leading-relaxed">
+                    También puedes solicitarlo a través de nuestro correo electrónico en
+                    <a href="mailto:contacto@servicegonzalez.es" class="text-bd-orange font-semibold hover:underline">contacto@servicegonzalez.es</a>
+                    o mediante teléfono en el
+                    <a href="tel:+34963844805" class="text-bd-orange font-semibold hover:underline">+34 963 84 48 05</a>
+                    en horario comercial de lunes a viernes.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="bg-neutral-950 border border-neutral-800 rounded-2xl p-6 md:p-8 space-y-4">
+                    <h3 class="font-title text-xl font-bold text-bd-orange">Reparaciones en garantía</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Nuestros talleres aceptan reparaciones en garantía de las marcas <strong class="text-white">DeWalt, Black &amp; Decker, Stanley y Bosch</strong> (otras marcas, consultar).
+                    </p>
+                    <ul class="space-y-3 text-sm text-gray-400 leading-relaxed list-disc pl-5 marker:text-bd-orange">
+                        <li>Las reparaciones efectuadas en garantía están sujetas a las condiciones particulares del fabricante o importador.</li>
+                        <li>Es imprescindible presentar la documentación que acredite que tu herramienta se encuentra en el período de garantía.</li>
+                        <li>Las herramientas no deben presentar signos de manipulación por personal ajeno a la red de posventa.</li>
+                        <li>Las reparaciones en período de garantía <strong class="text-white">no tienen coste de transporte</strong>.</li>
+                    </ul>
+                    <a href="condiciones-reparacion.html" class="inline-block text-sm text-bd-orange font-semibold hover:underline">Ver condiciones generales de reparación</a>
+                </div>
+
+                <div class="bg-neutral-950 border border-neutral-800 rounded-2xl p-6 md:p-8 space-y-4">
+                    <h3 class="font-title text-xl font-bold text-bd-orange">Reparaciones fuera de garantía</h3>
+                    <p class="text-gray-300 text-sm font-semibold">Elaboración de presupuesto</p>
+                    <ul class="space-y-3 text-sm text-gray-400 leading-relaxed list-disc pl-5 marker:text-bd-orange">
+                        <li>Se elaborarán presupuestos previos a la reparación y se notificarán al cliente en un plazo máximo de <strong class="text-white">72 h</strong>.</li>
+                        <li>A los presupuestos aceptados en un plazo máximo de <strong class="text-white">48 h</strong> desde su notificación se les aplicará un <strong class="text-white">5 % de descuento</strong>.</li>
+                    </ul>
+                    <a href="condiciones-reparacion.html" class="inline-block text-sm text-bd-orange font-semibold hover:underline">Ver condiciones generales de reparación</a>
+                </div>
+            </div>
+
+            <p class="mt-8 text-sm text-gray-400 italic">
+                * En cualquier caso, nuestro personal siempre contactará con el cliente antes de tomar cualquier decisión.
+            </p>
+            <p class="mt-2 font-title text-lg font-bold text-white">¡Pregunta sin compromiso!</p>
+
+            <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                <button type="button" data-modal-open="solicitarReparacion" data-modal-title="Solicitar recogida y reparación" class="bg-bd-orange hover:bg-bd-orange-dark text-white font-bold px-8 py-4 rounded-xl text-center transition shadow-lg cursor-pointer">
+                    Solicitar reparación
+                </button>
+                <button type="button" data-modal-open="consultarReparacion" data-modal-title="Consultar estado de mi reparación" class="border border-neutral-700 hover:border-bd-orange text-white font-bold px-8 py-4 rounded-xl text-center transition cursor-pointer">
+                    Consultar reparación
+                </button>
+            </div>
+
         </div>
     </section>
 
@@ -464,23 +578,14 @@
                             </div>
                         </div>
                     </div>
-                    <form class="space-y-4">
-                        <input type="text" placeholder="Tu nombre..." required class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <input type="tel" placeholder="Teléfono..." required class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm">
-                            <select class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-600">
-                                <option>Black & Decker</option>
-                                <option>DeWalt</option>
-                                <option>Stanley</option>
-                                <option>Bosch</option>
-                            </select>
-                        </div>
-                        <textarea placeholder="¿Qué le ocurre a tu herramienta?" rows="3" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm"></textarea>
-                        <button type="submit" class="w-full bg-neutral-900 text-white font-bold py-4 rounded-xl shadow-md">Enviar Consulta</button>
-                    </form>
                 </div>
                 <div class="w-full h-96 lg:h-auto min-h-[350px] rounded-2xl overflow-hidden shadow-md border border-gray-200 relative">
-                    <iframe class="absolute inset-0 w-full h-full" frameborder="0" src="https://maps.google.com/maps?q=C/%20de%20Sant%20Ignasi%20de%20Loiola,%2023,%20Extramurs,%2046008%20Val%C3%A8ncia&t=&z=16&ie=UTF8&iwloc=&output=embed"></iframe>
+                    <div id="map-placeholder" class="absolute inset-0 bg-neutral-100 flex flex-col items-center justify-center text-center p-6 gap-3">
+                        <p class="text-sm text-gray-600 max-w-xs">Para mostrar el mapa de Google necesitamos tu consentimiento para cookies de terceros.</p>
+                        <button type="button" data-cookie-accept class="bg-neutral-900 hover:bg-neutral-800 text-white text-sm font-bold px-5 py-2.5 rounded-lg cursor-pointer">Aceptar y ver mapa</button>
+                        <a href="https://www.google.com/maps/search/?api=1&query=C%2F+de+Sant+Ignasi+de+Loiola+23+46008+Valencia" target="_blank" rel="noopener noreferrer" class="text-xs text-bd-orange font-semibold hover:underline">Abrir en Google Maps</a>
+                    </div>
+                    <iframe title="Mapa de ubicación de Servi-González" class="hidden absolute inset-0 w-full h-full" frameborder="0" loading="lazy" data-consent-src="https://maps.google.com/maps?q=C/%20de%20Sant%20Ignasi%20de%20Loiola,%2023,%20Extramurs,%2046008%20Val%C3%A8ncia&t=&z=16&ie=UTF8&iwloc=&output=embed" data-consent-placeholder="map-placeholder"></iframe>
                 </div>
             </div>
         </div>
@@ -540,10 +645,11 @@
                     &copy; 2026 SERVI-GONZÁLEZ. Todos los derechos reservados.
                 </div>
                 <div class="flex flex-wrap gap-x-6 gap-y-2 justify-center">
-                    <a href="#aviso-legal" class="hover:text-neutral-300 transition">Aviso Legal</a>
-                    <a href="#privacidad" class="hover:text-neutral-300 transition">Política de Privacidad</a>
-                    <a href="#cookies" class="hover:text-neutral-300 transition">Política de Cookies</a>
-                    <a href="#terminos" class="hover:text-neutral-300 transition">Términos y Condiciones</a>
+                    <a href="aviso-legal.html" class="hover:text-neutral-300 transition">Aviso Legal</a>
+                    <a href="privacidad.html" class="hover:text-neutral-300 transition">Política de Privacidad</a>
+                    <a href="cookies.html" class="hover:text-neutral-300 transition">Política de Cookies</a>
+                    <a href="terminos.html" class="hover:text-neutral-300 transition">Términos y Condiciones</a>
+                    <button type="button" data-cookie-settings class="hover:text-neutral-300 transition cursor-pointer">Configurar cookies</button>
                 </div>
             </div>
         </div>
@@ -562,119 +668,21 @@
         </span>
     </a>
 
-    <script>
-        // --- LÓGICA DEL POPUP ---
-        window.addEventListener('DOMContentLoaded', () => {
-            const popup = document.getElementById('popup-bienvenida');
-            const card = popup.querySelector('.transform');
-            setTimeout(() => {
-                popup.classList.remove('opacity-0', 'pointer-events-none');
-                popup.classList.add('opacity-100');
-                card.classList.remove('scale-95');
-                card.classList.add('scale-100');
-            }, 1500);
-        });
+    <div id="cookie-banner" class="hidden fixed bottom-0 inset-x-0 z-[120] bg-neutral-950 text-gray-300 border-t border-neutral-800 shadow-2xl" role="dialog" aria-label="Aviso de cookies">
+        <div class="container mx-auto px-6 py-5 flex flex-col md:flex-row md:items-center gap-4">
+            <p class="text-xs leading-relaxed flex-1">
+                Usamos cookies técnicas necesarias para el funcionamiento del sitio y, con tu permiso, cookies de terceros (por ejemplo, el mapa de Google). Puedes aceptarlas, rechazarlas o leer más en nuestra
+                <a href="cookies.html" class="text-bd-orange font-semibold hover:underline">Política de Cookies</a>.
+            </p>
+            <div class="flex gap-3 shrink-0">
+                <button type="button" id="cookie-reject" class="border border-neutral-700 hover:border-gray-400 text-white text-sm font-bold px-5 py-2.5 rounded-lg transition cursor-pointer">Rechazar</button>
+                <button type="button" id="cookie-accept" class="bg-bd-orange hover:bg-bd-orange-dark text-white text-sm font-bold px-5 py-2.5 rounded-lg transition cursor-pointer">Aceptar</button>
+            </div>
+        </div>
+    </div>
 
-        function cerrarPopup() {
-            const popup = document.getElementById('popup-bienvenida');
-            const card = popup.querySelector('.transform');
-            card.classList.remove('scale-100');
-            card.classList.add('scale-95');
-            popup.classList.remove('opacity-100');
-            popup.classList.add('opacity-0', 'pointer-events-none');
-        }
-
-        // --- LÓGICA DEL SLIDER PRINCIPAL (HERO) ---
-        let currentSlide = 1;
-        const totalSlides = 2;
-        let slideInterval;
-
-        function showSlide(slideIndex) {
-            const s1 = document.getElementById('slide-1');
-            const s2 = document.getElementById('slide-2');
-            if (slideIndex === 1) {
-                s1.classList.replace('opacity-0', 'opacity-100');
-                s1.classList.replace('pointer-events-none', 'pointer-events-auto');
-                s2.classList.replace('opacity-100', 'opacity-0');
-                s2.classList.replace('pointer-events-auto', 'pointer-events-none');
-                currentSlide = 1;
-            } else {
-                s2.classList.replace('opacity-0', 'opacity-100');
-                s2.classList.replace('pointer-events-none', 'pointer-events-auto');
-                s1.classList.replace('opacity-100', 'opacity-0');
-                s1.classList.replace('pointer-events-auto', 'pointer-events-none');
-                currentSlide = 2;
-            }
-        }
-
-        function changeSlide(direction) {
-            clearInterval(slideInterval);
-            let nextSlide = currentSlide + direction;
-            if (nextSlide > totalSlides) nextSlide = 1;
-            if (nextSlide < 1) nextSlide = totalSlides;
-            showSlide(nextSlide);
-            startAutoSlide();
-        }
-
-        function startAutoSlide() {
-            slideInterval = setInterval(() => {
-                let nextSlide = currentSlide + 1;
-                if (nextSlide > totalSlides) nextSlide = 1;
-                showSlide(nextSlide);
-            }, 5000);
-        }
-        startAutoSlide();
-
-        // --- LÓGICA DEL CARRUSEL DE PRODUCTOS (TOP 10 EN #VENTAS) ---
-        let productIndex = 0;
-        let productInterval;
-
-        function getVisibleCards() {
-            if (window.innerWidth >= 1024) return 4; 
-            if (window.innerWidth >= 640) return 2;  
-            return 1;                                
-        }
-
-        function updateProductSlider() {
-            const track = document.getElementById('product-track');
-            if (!track) return;
-            const cardsVisible = getVisibleCards();
-            const totalProducts = 10;
-            const gap = 24; // Brecha de la rejilla (24px)
-            
-            const maxIndex = totalProducts - cardsVisible;
-            if (productIndex > maxIndex) productIndex = 0;
-            if (productIndex < 0) productIndex = maxIndex;
-
-            const cardWidth = track.firstElementChild.getBoundingClientRect().width;
-            const amountToMove = productIndex * (cardWidth + gap);
-            
-            track.style.transform = `translateX(-${amountToMove}px)`;
-        }
-
-        function nextProduct() {
-            clearInterval(productInterval);
-            productIndex++;
-            updateProductSlider();
-            startProductAutoSlide();
-        }
-
-        function prevProduct() {
-            clearInterval(productInterval);
-            productIndex--;
-            updateProductSlider();
-            startProductAutoSlide();
-        }
-
-        function startProductAutoSlide() {
-            productInterval = setInterval(() => {
-                productIndex++;
-                updateProductSlider();
-            }, 4000);
-        }
-
-        startProductAutoSlide();
-        window.addEventListener('resize', updateProductSlider);
-    </script>
+    <script src="js/config.js"></script>
+    <script src="js/cookies.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

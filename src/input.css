@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@source "../*.html";
+@source "../js";
+
+@theme {
+    --color-bd-orange: #FF6600;
+    --color-bd-orange-dark: #E05500;
+    --font-title: 'Montserrat Variable', 'Montserrat', sans-serif;
+}
