@@ -1,6 +1,39 @@
 // --- PREFERENCIAS DE MOVIMIENTO ---
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+// Mantiene el foco dentro de un diálogo (Tab / Shift+Tab) entre sus elementos enfocables
+function trapFocus(container, e) {
+    if (e.key !== 'Tab') return;
+    const items = [...container.querySelectorAll('button, [href], iframe, input, select, textarea, [tabindex]:not([tabindex="-1"])')]
+        .filter(el => !el.disabled && el.offsetParent !== null);
+    if (!items.length) return;
+    const first = items[0];
+    const last = items[items.length - 1];
+    if (e.shiftKey && (document.activeElement === first || !container.contains(document.activeElement))) {
+        e.preventDefault(); last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault(); first.focus();
+    }
+}
+
+// --- MENÚ MÓVIL ---
+const mobileMenu = document.getElementById('mobile-menu');
+const menuToggle = document.getElementById('menu-toggle');
+
+function closeMobileMenu() {
+    if (!mobileMenu) return;
+    mobileMenu.classList.add('hidden');
+    menuToggle.setAttribute('aria-expanded', 'false');
+}
+
+if (menuToggle) {
+    menuToggle.addEventListener('click', () => {
+        const open = mobileMenu.classList.toggle('hidden') === false;
+        menuToggle.setAttribute('aria-expanded', String(open));
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileMenu));
+}
+
 // --- MODAL CON LA APP DE REPARACIONES (iframe cargado al abrir) ---
 document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('modal-app');
@@ -34,160 +67,172 @@ document.addEventListener('DOMContentLoaded', () => {
     closeBtn.addEventListener('click', closeModal);
     modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && isOpen()) closeModal(); });
-
-    // Mantiene el foco dentro del modal: del botón de cierre salta al iframe y viceversa
-    modal.addEventListener('keydown', e => {
-        if (e.key !== 'Tab' || !isOpen()) return;
-        const focusables = [closeBtn, frame];
-        const idx = focusables.indexOf(document.activeElement);
-        if (e.shiftKey && idx <= 0) { e.preventDefault(); frame.focus(); }
-        else if (!e.shiftKey && idx === focusables.length - 1) { e.preventDefault(); closeBtn.focus(); }
-    });
+    modal.addEventListener('keydown', e => { if (isOpen()) trapFocus(modal, e); });
 });
 
-// --- MENÚ MÓVIL ---
-const mobileMenu = document.getElementById('mobile-menu');
-const menuToggle = document.getElementById('menu-toggle');
-
-function closeMobileMenu() {
-    if (!mobileMenu) return;
-    mobileMenu.classList.add('hidden');
-    menuToggle.setAttribute('aria-expanded', 'false');
-}
-
-if (menuToggle) {
-    menuToggle.addEventListener('click', () => {
-        const open = mobileMenu.classList.toggle('hidden') === false;
-        menuToggle.setAttribute('aria-expanded', String(open));
-    });
-    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileMenu));
-}
-
-// --- LÓGICA DEL POPUP DE BIENVENIDA ---
-window.addEventListener('DOMContentLoaded', () => {
+// --- POPUP DE BIENVENIDA ---
+// Se muestra una sola vez por navegador y solo después de resolver el banner de cookies.
+document.addEventListener('DOMContentLoaded', () => {
+    const POPUP_KEY = 'sg_popup_seen';
     const popup = document.getElementById('popup-bienvenida');
     const card = popup.querySelector('.transform');
-    setTimeout(() => {
+    let opener = null;
+
+    const seen = () => { try { return localStorage.getItem(POPUP_KEY) === '1'; } catch (e) { return false; } };
+    const markSeen = () => { try { localStorage.setItem(POPUP_KEY, '1'); } catch (e) { /* sin almacenamiento */ } };
+    const isOpen = () => !popup.classList.contains('pointer-events-none');
+
+    function openPopup() {
+        if (seen() || isOpen()) return;
+        opener = document.activeElement;
+        popup.removeAttribute('inert');
+        popup.setAttribute('aria-hidden', 'false');
         popup.classList.remove('opacity-0', 'pointer-events-none');
         popup.classList.add('opacity-100');
         card.classList.remove('scale-95');
         card.classList.add('scale-100');
-    }, 1500);
+        popup.querySelector('[data-popup-close]').focus();
+    }
+
+    function closePopup() {
+        markSeen();
+        card.classList.remove('scale-100');
+        card.classList.add('scale-95');
+        popup.classList.remove('opacity-100');
+        popup.classList.add('opacity-0', 'pointer-events-none');
+        popup.setAttribute('aria-hidden', 'true');
+        popup.setAttribute('inert', '');
+        if (opener && opener.focus) opener.focus();
+    }
+
+    popup.querySelectorAll('[data-popup-close]').forEach(b => b.addEventListener('click', closePopup));
+    popup.addEventListener('click', e => { if (e.target === popup) closePopup(); });
+    popup.addEventListener('keydown', e => {
+        if (e.key === 'Escape') closePopup();
+        else trapFocus(popup, e);
+    });
+
+    const bannerPending = () => {
+        const banner = document.getElementById('cookie-banner');
+        return banner && !banner.classList.contains('hidden');
+    };
+    const schedule = () => setTimeout(openPopup, 1500);
+
+    if (bannerPending()) document.addEventListener('sg:consent-resolved', schedule, { once: true });
+    else schedule();
 });
 
-function cerrarPopup() {
-    const popup = document.getElementById('popup-bienvenida');
-    const card = popup.querySelector('.transform');
-    card.classList.remove('scale-100');
-    card.classList.add('scale-95');
-    popup.classList.remove('opacity-100');
-    popup.classList.add('opacity-0', 'pointer-events-none');
-}
+// --- AUTOPLAY: pausa con la pestaña oculta o la sección fuera de pantalla ---
+function createAutoplay(section, tick, delay) {
+    let timer = null;
+    let visible = true;
+    let hovering = false;
+    let paused = false;
 
-// --- LÓGICA DEL SLIDER PRINCIPAL (HERO) ---
-let currentSlide = 1;
-const totalSlides = 2;
-let slideInterval;
+    const running = () => !reduceMotion && visible && !hovering && !paused && !document.hidden;
+    const sync = () => {
+        clearInterval(timer);
+        timer = running() ? setInterval(tick, delay) : null;
+    };
 
-function showSlide(slideIndex) {
-    const s1 = document.getElementById('slide-1');
-    const s2 = document.getElementById('slide-2');
-    if (slideIndex === 1) {
-        s1.classList.replace('opacity-0', 'opacity-100');
-        s1.classList.replace('pointer-events-none', 'pointer-events-auto');
-        s2.classList.replace('opacity-100', 'opacity-0');
-        s2.classList.replace('pointer-events-auto', 'pointer-events-none');
-        currentSlide = 1;
-    } else {
-        s2.classList.replace('opacity-0', 'opacity-100');
-        s2.classList.replace('pointer-events-none', 'pointer-events-auto');
-        s1.classList.replace('opacity-100', 'opacity-0');
-        s1.classList.replace('pointer-events-auto', 'pointer-events-none');
-        currentSlide = 2;
+    section.addEventListener('mouseenter', () => { hovering = true; sync(); });
+    section.addEventListener('mouseleave', () => { hovering = false; sync(); });
+    section.addEventListener('focusin', () => { hovering = true; sync(); });
+    section.addEventListener('focusout', () => { hovering = false; sync(); });
+    document.addEventListener('visibilitychange', sync);
+    if ('IntersectionObserver' in window) {
+        new IntersectionObserver(entries => { visible = entries[0].isIntersecting; sync(); }).observe(section);
     }
+    sync();
+
+    return {
+        restart: sync,
+        setPaused(value) { paused = value; sync(); },
+        isPaused: () => paused
+    };
 }
 
-function changeSlide(direction) {
-    clearInterval(slideInterval);
-    let nextSlide = currentSlide + direction;
-    if (nextSlide > totalSlides) nextSlide = 1;
-    if (nextSlide < 1) nextSlide = totalSlides;
-    showSlide(nextSlide);
-    startAutoSlide();
-}
+// --- SLIDER PRINCIPAL (HERO) ---
+(function () {
+    const hero = document.getElementById('inicio');
+    const slides = [...hero.querySelectorAll('.slide')];
+    const pauseBtn = document.getElementById('slide-toggle');
+    let current = 0;
 
-function startAutoSlide() {
-    clearInterval(slideInterval);
-    if (reduceMotion) return;
-    slideInterval = setInterval(() => {
-        let nextSlide = currentSlide + 1;
-        if (nextSlide > totalSlides) nextSlide = 1;
-        showSlide(nextSlide);
-    }, 5000);
-}
-startAutoSlide();
+    function show(index) {
+        current = (index + slides.length) % slides.length;
+        slides.forEach((slide, i) => {
+            const active = i === current;
+            slide.classList.toggle('opacity-100', active);
+            slide.classList.toggle('pointer-events-auto', active);
+            slide.classList.toggle('opacity-0', !active);
+            slide.classList.toggle('pointer-events-none', !active);
+            slide.toggleAttribute('inert', !active);
+            slide.setAttribute('aria-hidden', String(!active));
+        });
+    }
 
-const heroSection = document.getElementById('inicio');
-heroSection.addEventListener('mouseenter', () => clearInterval(slideInterval));
-heroSection.addEventListener('mouseleave', startAutoSlide);
-heroSection.addEventListener('focusin', () => clearInterval(slideInterval));
-heroSection.addEventListener('focusout', startAutoSlide);
+    const autoplay = createAutoplay(hero, () => show(current + 1), 5000);
 
-// --- LÓGICA DEL CARRUSEL DE PRODUCTOS (TOP 10 EN #VENTAS) ---
-let productIndex = 0;
-let productInterval;
+    hero.querySelectorAll('[data-slide]').forEach(btn => btn.addEventListener('click', () => {
+        show(current + Number(btn.dataset.slide));
+        autoplay.restart();
+    }));
 
-function getVisibleCards() {
-    if (window.innerWidth >= 1024) return 4;
-    if (window.innerWidth >= 640) return 2;
-    return 1;
-}
+    if (pauseBtn) {
+        pauseBtn.addEventListener('click', () => {
+            autoplay.setPaused(!autoplay.isPaused());
+            pauseBtn.setAttribute('aria-pressed', String(autoplay.isPaused()));
+            pauseBtn.setAttribute('aria-label', autoplay.isPaused() ? 'Reanudar rotación automática' : 'Pausar rotación automática');
+            pauseBtn.textContent = autoplay.isPaused() ? 'Reanudar' : 'Pausar';
+        });
+    }
+})();
 
-function updateProductSlider() {
+// --- CARRUSEL DE PRODUCTOS (TOP 10 EN #VENTAS) ---
+(function () {
+    const section = document.getElementById('ventas');
     const track = document.getElementById('product-track');
-    if (!track) return;
-    const cardsVisible = getVisibleCards();
-    const totalProducts = track.children.length;
-    const gap = 24; // Brecha de la rejilla (24px)
+    const GAP = 24; // Brecha entre tarjetas (gap-6)
+    let index = 0;
 
-    const maxIndex = totalProducts - cardsVisible;
-    if (productIndex > maxIndex) productIndex = 0;
-    if (productIndex < 0) productIndex = maxIndex;
+    function visibleCards() {
+        if (window.innerWidth >= 1024) return 4;
+        if (window.innerWidth >= 640) return 2;
+        return 1;
+    }
 
-    const cardWidth = track.firstElementChild.getBoundingClientRect().width;
-    const amountToMove = productIndex * (cardWidth + gap);
+    function update() {
+        const cards = [...track.children];
+        const visible = visibleCards();
+        const maxIndex = Math.max(cards.length - visible, 0);
+        // Da la vuelta en ambos extremos
+        if (index > maxIndex) index = 0;
+        if (index < 0) index = maxIndex;
 
-    track.style.transform = `translateX(-${amountToMove}px)`;
-}
+        const cardWidth = cards[0].getBoundingClientRect().width;
+        track.style.transform = `translateX(-${index * (cardWidth + GAP)}px)`;
 
-function nextProduct() {
-    clearInterval(productInterval);
-    productIndex++;
-    updateProductSlider();
-    startProductAutoSlide();
-}
+        // Las tarjetas fuera de vista no deben recibir foco ni leerse
+        cards.forEach((card, i) => {
+            const inView = i >= index && i < index + visible;
+            card.toggleAttribute('inert', !inView);
+            card.setAttribute('aria-hidden', String(!inView));
+        });
+    }
 
-function prevProduct() {
-    clearInterval(productInterval);
-    productIndex--;
-    updateProductSlider();
-    startProductAutoSlide();
-}
+    const autoplay = createAutoplay(section, () => { index++; update(); }, 4000);
 
-function startProductAutoSlide() {
-    clearInterval(productInterval);
-    if (reduceMotion) return;
-    productInterval = setInterval(() => {
-        productIndex++;
-        updateProductSlider();
-    }, 4000);
-}
+    section.querySelectorAll('[data-product]').forEach(btn => btn.addEventListener('click', () => {
+        index += Number(btn.dataset.product);
+        update();
+        autoplay.restart();
+    }));
 
-startProductAutoSlide();
-window.addEventListener('resize', updateProductSlider);
-
-const salesSection = document.getElementById('ventas');
-salesSection.addEventListener('mouseenter', () => clearInterval(productInterval));
-salesSection.addEventListener('mouseleave', startProductAutoSlide);
-salesSection.addEventListener('focusin', () => clearInterval(productInterval));
-salesSection.addEventListener('focusout', startProductAutoSlide);
+    let resizeFrame = null;
+    window.addEventListener('resize', () => {
+        cancelAnimationFrame(resizeFrame);
+        resizeFrame = requestAnimationFrame(update);
+    });
+    update();
+})();

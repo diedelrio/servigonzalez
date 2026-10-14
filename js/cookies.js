@@ -16,6 +16,7 @@
     function hideBanner() {
         const banner = document.getElementById('cookie-banner');
         if (banner) banner.classList.add('hidden');
+        document.dispatchEvent(new CustomEvent('sg:consent-resolved'));
     }
 
     function showBanner() {

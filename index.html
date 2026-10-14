@@ -15,7 +15,6 @@
     <meta property="og:title" content="Servi-González - Servicio Técnico Multimarca en Valencia">
     <meta property="og:description" content="Reparaciones en garantía, recambios y venta de maquinaria DeWalt, Black &amp; Decker, Stanley y Bosch en Valencia.">
     <meta property="og:url" content="https://www.servicegonzalez.es/">
-    <meta property="og:image" content="https://www.servicegonzalez.es/img/logo-dewalt.png">
     <meta name="twitter:card" content="summary">
 
     <link rel="preload" href="fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -54,16 +53,17 @@
     </script>
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased">
+    <a href="#contenido" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[130] focus:bg-white focus:text-neutral-900 focus:px-4 focus:py-2 focus:rounded-lg">Saltar al contenido</a>
 
-    <div id="popup-bienvenida" class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs transition-opacity duration-500 opacity-0 pointer-events-none">
+    <div id="popup-bienvenida" role="dialog" aria-modal="true" aria-labelledby="popup-titulo" aria-hidden="true" inert class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs transition-opacity duration-500 opacity-0 pointer-events-none">
         <div class="bg-white rounded-2xl max-w-lg w-full p-8 shadow-2xl border border-gray-100 relative transform scale-95 transition-transform duration-500">
-            <button onclick="cerrarPopup()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-900 bg-gray-50 hover:bg-gray-100 p-2 rounded-full transition duration-200 cursor-pointer" aria-label="Cerrar ventana">
+            <button type="button" data-popup-close class="absolute top-4 right-4 text-gray-400 hover:text-gray-900 bg-gray-50 hover:bg-gray-100 p-2 rounded-full transition duration-200 cursor-pointer" aria-label="Cerrar ventana">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
             </button>
             <div class="text-center space-y-4">
                 
-                <span class="block text-xl font-bold uppercase tracking-widest text-bd-orange">Nueva Era en Servi-González</span>
-                <h3 class="font-title text-2xl font-black text-neutral-900 tracking-tight leading-snug">
+                <span class="block text-xl font-bold uppercase tracking-widest text-orange-700">Nueva Era en Servi-González</span>
+                <h3 id="popup-titulo" class="font-title text-2xl font-black text-neutral-900 tracking-tight leading-snug">
                     ¡Evolucionamos para darte <br><span class="text-bd-orange">más y mejores</span> servicios!
                 </h3>
                 <p class="text-gray-600 text-sm leading-relaxed">
@@ -73,7 +73,7 @@
                     Durante los próximos meses iremos implementando nuevos procesos y optimizando nuestros servicios, siempre enfocados en llevar la atención de tus herramientas al siguiente nivel. ¡Gracias por formar parte de nuestra evolución!
                 </p>
                 <div class="pt-4">
-                    <button onclick="cerrarPopup()" class="w-full bg-neutral-900 hover:bg-neutral-800 text-white font-bold py-3.5 rounded-xl transition shadow-md cursor-pointer">
+                    <button type="button" data-popup-close class="w-full bg-neutral-900 hover:bg-neutral-800 text-white font-bold py-3.5 rounded-xl transition shadow-md cursor-pointer">
                         Descubrir las Novedades
                     </button>
                 </div>
@@ -86,7 +86,7 @@
             <button type="button" id="modal-app-close" class="absolute top-3 right-3 z-10 text-gray-400 hover:text-gray-900 bg-gray-50 hover:bg-gray-100 p-2 rounded-full transition cursor-pointer" aria-label="Cerrar ventana">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
             </button>
-            <iframe id="modal-app-frame" title="" class="w-full h-full block border-0"></iframe>
+            <iframe id="modal-app-frame" title="" sandbox="allow-forms allow-scripts allow-same-origin allow-popups allow-downloads" referrerpolicy="strict-origin-when-cross-origin" class="w-full h-full block border-0"></iframe>
         </div>
     </div>
 
@@ -102,7 +102,7 @@
                 <a href="#servicios" class="hover:text-white transition">Servicios</a>
                 <a href="#marcas" class="hover:text-white transition">Garantías Oficiales</a>
                 <a href="#ventajas" class="hover:text-white transition">Por qué elegirnos</a>
-                <a href="#contacto" class="hover:text-white transition">Ubicación</a>
+                <a href="#contacto" class="hover:text-white transition">Contacto</a>
             </nav>
             <div class="flex items-center gap-3">
                 <a href="#" data-config-url="app" target="_blank" rel="noopener" class="hidden lg:block border border-neutral-600 hover:border-bd-orange text-white font-semibold px-4 py-2.5 rounded-lg text-sm transition whitespace-nowrap">
@@ -126,7 +126,7 @@
             <a href="#servicios" class="block py-2.5 hover:text-white">Servicios</a>
             <a href="#marcas" class="block py-2.5 hover:text-white">Garantías Oficiales</a>
             <a href="#ventajas" class="block py-2.5 hover:text-white">Por qué elegirnos</a>
-            <a href="#contacto" class="block py-2.5 hover:text-white">Ubicación</a>
+            <a href="#contacto" class="block py-2.5 hover:text-white">Contacto</a>
             <div class="pt-3 grid grid-cols-1 gap-3">
                 <button type="button" data-modal-open="solicitarReparacion" data-modal-title="Solicitar recogida y reparación" class="bg-bd-orange text-white font-bold py-3 rounded-xl cursor-pointer">Solicitar reparación</button>
                 <a href="#" data-config-url="app" target="_blank" rel="noopener" class="border border-neutral-700 text-white font-bold py-3 rounded-xl text-center">Acceder a la app</a>
@@ -135,6 +135,7 @@
         </nav>
     </header>
 
+    <main id="contenido">
     <section id="inicio" class="relative bg-neutral-900 text-white h-[600px] md:h-[550px] flex items-center overflow-hidden">
         <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
         
@@ -145,9 +146,9 @@
                     <span class="inline-block bg-neutral-800 text-bd-orange text-xs font-bold uppercase tracking-widest px-3 py-1 rounded border border-neutral-700">
                         Taller Autorizado Multimarca
                     </span>
-                    <h2 class="font-title text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-none">
+                    <h1 class="font-title text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-none">
                         ¿Tu herramienta necesita <span class="text-bd-orange">reparación oficial</span>?
-                    </h2>
+                    </h1>
                     <p class="text-gray-400 text-lg max-w-lg">
                         Somos el centro de confianza en Valencia. Gestionamos reparaciones en garantía, asistencia técnica y recambios oficiales de las marcas líderes del sector.
                     </p>
@@ -166,7 +167,7 @@
                 </div>
             </div>
 
-            <div id="slide-2" class="slide absolute inset-x-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center opacity-0 pointer-events-none">
+            <div id="slide-2" inert aria-hidden="true" class="slide absolute inset-x-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center opacity-0 pointer-events-none">
                 <div class="space-y-6">
                     <span class="inline-block bg-bd-orange text-neutral-950 text-xs font-black uppercase tracking-widest px-3 py-1 rounded">
                         Novedad Comercial
@@ -185,7 +186,7 @@
                 </div>
                 <div class="hidden md:flex justify-center">
                     <div class="border-4 border-neutral-800 bg-neutral-950 p-8 rounded-2xl shadow-2xl max-w-sm">
-                        <div class="text-bd-orange font-title text-5xl font-black mb-2">🛒</div>
+                        <div class="text-bd-orange font-title text-5xl font-black mb-2" aria-hidden="true">🛒</div>
                         <div class="text-white font-bold text-lg mb-1">Catálogo Oficial</div>
                         <p class="text-gray-400 text-sm">Adquiere tus nuevas máquinas directamente en Valencia con asesoramiento preventivo y cobertura técnica total postventa.</p>
                     </div>
@@ -194,10 +195,11 @@
 
         </div>
 
-        <button onclick="changeSlide(-1)" class="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/30 hover:bg-black/60 p-3 rounded-full text-white transition cursor-pointer" aria-label="Anterior diapositiva">
+        <button type="button" id="slide-toggle" aria-pressed="false" aria-label="Pausar rotación automática" class="absolute bottom-4 right-4 z-20 bg-black/30 hover:bg-black/60 px-3 py-1.5 rounded-full text-white text-xs font-semibold transition cursor-pointer">Pausar</button>
+        <button type="button" data-slide="-1" class="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/30 hover:bg-black/60 p-3 rounded-full text-white transition cursor-pointer" aria-label="Anterior diapositiva">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
         </button>
-        <button onclick="changeSlide(1)" class="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/30 hover:bg-black/60 p-3 rounded-full text-white transition cursor-pointer" aria-label="Siguiente diapositiva">
+        <button type="button" data-slide="1" class="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/30 hover:bg-black/60 p-3 rounded-full text-white transition cursor-pointer" aria-label="Siguiente diapositiva">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
         </button>
     </section>
@@ -220,125 +222,125 @@
             </div>
 
             <div class="relative w-full overflow-hidden">
-                <div id="product-track" class="flex gap-6 transition-transform duration-500 ease-in-out" style="transform: translateX(0px);">
+                <div id="product-track" role="region" aria-label="Productos destacados" class="flex gap-6 transition-transform duration-500 ease-in-out" style="transform: translateX(0px);">
                     
                     <div class="min-w-[calc(100%-0px)] sm:min-w-[calc(50%-12px)] lg:min-w-[calc(25%-18px)] bg-neutral-950 p-6 rounded-2xl border border-neutral-800 flex flex-col justify-between h-[360px] shadow-xl">
                         <div>
                             <span class="text-xs font-bold text-bd-orange uppercase tracking-wider">DeWalt</span>
-                            <h4 class="font-title font-bold text-base mt-1 text-white">Taladro Percutor XR 18V</h4>
+                            <h3 class="font-title font-bold text-base mt-1 text-white">Taladro Percutor XR 18V</h3>
                             <p class="text-xs text-gray-400 mt-2 leading-relaxed">Máxima potencia sin cables para perforaciones exigentes en hormigón y mampostería.</p>
                         </div>
                         <div class="border-t border-neutral-800 pt-4 mt-4 flex items-center justify-between">
                             <span class="text-xs bg-neutral-900 px-2.5 py-1 rounded text-gray-300 font-mono font-bold border border-neutral-800">Top 1</span>
-                            <span class="text-xs text-bd-orange font-bold tracking-wide">Consultar stock</span>
+                            <a href="https://wa.me/34963844805?text=Hola!%20Quisiera%20consultar%20el%20stock%20de%3A%20Taladro%20Percutor%20XR%2018V%20(DeWalt)." target="_blank" rel="noopener noreferrer" class="text-xs text-bd-orange font-bold tracking-wide hover:underline">Consultar stock<span class="sr-only"> de Taladro Percutor XR 18V</span></a>
                         </div>
                     </div>
 
                     <div class="min-w-[calc(100%-0px)] sm:min-w-[calc(50%-12px)] lg:min-w-[calc(25%-18px)] bg-neutral-950 p-6 rounded-2xl border border-neutral-800 flex flex-col justify-between h-[360px] shadow-xl">
                         <div>
                             <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">Bosch Professional</span>
-                            <h4 class="font-title font-bold text-base mt-1 text-white">Amoladora Angular GWS</h4>
+                            <h3 class="font-title font-bold text-base mt-1 text-white">Amoladora Angular GWS</h3>
                             <p class="text-xs text-gray-400 mt-2 leading-relaxed">Protección electrónica contra rearranque y motor de alto rendimiento para corte industrial.</p>
                         </div>
                         <div class="border-t border-neutral-800 pt-4 mt-4 flex items-center justify-between">
                             <span class="text-xs bg-neutral-900 px-2.5 py-1 rounded text-gray-300 font-mono font-bold border border-neutral-800">Top 2</span>
-                            <span class="text-xs text-bd-orange font-bold tracking-wide">Consultar stock</span>
+                            <a href="https://wa.me/34963844805?text=Hola!%20Quisiera%20consultar%20el%20stock%20de%3A%20Amoladora%20Angular%20GWS%20(Bosch%20Professional)." target="_blank" rel="noopener noreferrer" class="text-xs text-bd-orange font-bold tracking-wide hover:underline">Consultar stock<span class="sr-only"> de Amoladora Angular GWS</span></a>
                         </div>
                     </div>
 
                     <div class="min-w-[calc(100%-0px)] sm:min-w-[calc(50%-12px)] lg:min-w-[calc(25%-18px)] bg-neutral-950 p-6 rounded-2xl border border-neutral-800 flex flex-col justify-between h-[360px] shadow-xl">
                         <div>
                             <span class="text-xs font-bold text-yellow-500 uppercase tracking-wider">Stanley</span>
-                            <h4 class="font-title font-bold text-base mt-1 text-white">Sierra Circular FatMax</h4>
+                            <h3 class="font-title font-bold text-base mt-1 text-white">Sierra Circular FatMax</h3>
                             <p class="text-xs text-gray-400 mt-2 leading-relaxed">Zapata de magnesio y guía láser para cortes longitudinales milimétricos y limpios.</p>
                         </div>
                         <div class="border-t border-neutral-800 pt-4 mt-4 flex items-center justify-between">
                             <span class="text-xs bg-neutral-900 px-2.5 py-1 rounded text-gray-300 font-mono font-bold border border-neutral-800">Top 3</span>
-                            <span class="text-xs text-bd-orange font-bold tracking-wide">Consultar stock</span>
+                            <a href="https://wa.me/34963844805?text=Hola!%20Quisiera%20consultar%20el%20stock%20de%3A%20Sierra%20Circular%20FatMax%20(Stanley)." target="_blank" rel="noopener noreferrer" class="text-xs text-bd-orange font-bold tracking-wide hover:underline">Consultar stock<span class="sr-only"> de Sierra Circular FatMax</span></a>
                         </div>
                     </div>
 
                     <div class="min-w-[calc(100%-0px)] sm:min-w-[calc(50%-12px)] lg:min-w-[calc(25%-18px)] bg-neutral-950 p-6 rounded-2xl border border-neutral-800 flex flex-col justify-between h-[360px] shadow-xl">
                         <div>
                             <span class="text-xs font-bold text-orange-500 uppercase tracking-wider">Black & Decker</span>
-                            <h4 class="font-title font-bold text-base mt-1 text-white">Cortasetos Li-Ion 18V</h4>
+                            <h3 class="font-title font-bold text-base mt-1 text-white">Cortasetos Li-Ion 18V</h3>
                             <p class="text-xs text-gray-400 mt-2 leading-relaxed">Hoja de doble acción cortada al diamante. Perfecta ergonomía para mantenimiento de jardín.</p>
                         </div>
                         <div class="border-t border-neutral-800 pt-4 mt-4 flex items-center justify-between">
                             <span class="text-xs bg-neutral-900 px-2.5 py-1 rounded text-gray-300 font-mono font-bold border border-neutral-800">Top 4</span>
-                            <span class="text-xs text-bd-orange font-bold tracking-wide">Consultar stock</span>
+                            <a href="https://wa.me/34963844805?text=Hola!%20Quisiera%20consultar%20el%20stock%20de%3A%20Cortasetos%20Li-Ion%2018V%20(Black%20%26%20Decker)." target="_blank" rel="noopener noreferrer" class="text-xs text-bd-orange font-bold tracking-wide hover:underline">Consultar stock<span class="sr-only"> de Cortasetos Li-Ion 18V</span></a>
                         </div>
                     </div>
 
                     <div class="min-w-[calc(100%-0px)] sm:min-w-[calc(50%-12px)] lg:min-w-[calc(25%-18px)] bg-neutral-950 p-6 rounded-2xl border border-neutral-800 flex flex-col justify-between h-[360px] shadow-xl">
                         <div>
                             <span class="text-xs font-bold text-bd-orange uppercase tracking-wider">DeWalt</span>
-                            <h4 class="font-title font-bold text-base mt-1 text-white">Atornillador de Impacto</h4>
+                            <h3 class="font-title font-bold text-base mt-1 text-white">Atornillador de Impacto</h3>
                             <p class="text-xs text-gray-400 mt-2 leading-relaxed">Estructura ultra compacta de 3 velocidades para fijaciones estructurales de alta resistencia.</p>
                         </div>
                         <div class="border-t border-neutral-800 pt-4 mt-4 flex items-center justify-between">
                             <span class="text-xs bg-neutral-900 px-2.5 py-1 rounded text-gray-300 font-mono font-bold border border-neutral-800">Top 5</span>
-                            <span class="text-xs text-bd-orange font-bold tracking-wide">Consultar stock</span>
+                            <a href="https://wa.me/34963844805?text=Hola!%20Quisiera%20consultar%20el%20stock%20de%3A%20Atornillador%20de%20Impacto%20(DeWalt)." target="_blank" rel="noopener noreferrer" class="text-xs text-bd-orange font-bold tracking-wide hover:underline">Consultar stock<span class="sr-only"> de Atornillador de Impacto</span></a>
                         </div>
                     </div>
 
                     <div class="min-w-[calc(100%-0px)] sm:min-w-[calc(50%-12px)] lg:min-w-[calc(25%-18px)] bg-neutral-950 p-6 rounded-2xl border border-neutral-800 flex flex-col justify-between h-[360px] shadow-xl">
                         <div>
                             <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">Bosch Professional</span>
-                            <h4 class="font-title font-bold text-base mt-1 text-white">Martillo Perforador SDS-Plus</h4>
+                            <h3 class="font-title font-bold text-base mt-1 text-white">Martillo Perforador SDS-Plus</h3>
                             <p class="text-xs text-gray-400 mt-2 leading-relaxed">Sistema de amortiguación Vibration Control para un trabajo continuo y estable en obra.</p>
                         </div>
                         <div class="border-t border-neutral-800 pt-4 mt-4 flex items-center justify-between">
                             <span class="text-xs bg-neutral-900 px-2.5 py-1 rounded text-gray-300 font-mono font-bold border border-neutral-800">Top 6</span>
-                            <span class="text-xs text-bd-orange font-bold tracking-wide">Consultar stock</span>
+                            <a href="https://wa.me/34963844805?text=Hola!%20Quisiera%20consultar%20el%20stock%20de%3A%20Martillo%20Perforador%20SDS-Plus%20(Bosch%20Professional)." target="_blank" rel="noopener noreferrer" class="text-xs text-bd-orange font-bold tracking-wide hover:underline">Consultar stock<span class="sr-only"> de Martillo Perforador SDS-Plus</span></a>
                         </div>
                     </div>
 
                     <div class="min-w-[calc(100%-0px)] sm:min-w-[calc(50%-12px)] lg:min-w-[calc(25%-18px)] bg-neutral-950 p-6 rounded-2xl border border-neutral-800 flex flex-col justify-between h-[360px] shadow-xl">
                         <div>
                             <span class="text-xs font-bold text-yellow-500 uppercase tracking-wider">Stanley</span>
-                            <h4 class="font-title font-bold text-base mt-1 text-white">Lijadora Orbital FatMax</h4>
+                            <h3 class="font-title font-bold text-base mt-1 text-white">Lijadora Orbital FatMax</h3>
                             <p class="text-xs text-gray-400 mt-2 leading-relaxed">Extracción de polvo integrada y velocidad variable para acabados limpios en madera.</p>
                         </div>
                         <div class="border-t border-neutral-800 pt-4 mt-4 flex items-center justify-between">
                             <span class="text-xs bg-neutral-900 px-2.5 py-1 rounded text-gray-300 font-mono font-bold border border-neutral-800">Top 7</span>
-                            <span class="text-xs text-bd-orange font-bold tracking-wide">Consultar stock</span>
+                            <a href="https://wa.me/34963844805?text=Hola!%20Quisiera%20consultar%20el%20stock%20de%3A%20Lijadora%20Orbital%20FatMax%20(Stanley)." target="_blank" rel="noopener noreferrer" class="text-xs text-bd-orange font-bold tracking-wide hover:underline">Consultar stock<span class="sr-only"> de Lijadora Orbital FatMax</span></a>
                         </div>
                     </div>
 
                     <div class="min-w-[calc(100%-0px)] sm:min-w-[calc(50%-12px)] lg:min-w-[calc(25%-18px)] bg-neutral-950 p-6 rounded-2xl border border-neutral-800 flex flex-col justify-between h-[360px] shadow-xl">
                         <div>
                             <span class="text-xs font-bold text-orange-500 uppercase tracking-wider">Black & Decker</span>
-                            <h4 class="font-title font-bold text-base mt-1 text-white">Aspirador de Mano Dustbuster</h4>
+                            <h3 class="font-title font-bold text-base mt-1 text-white">Aspirador de Mano Dustbuster</h3>
                             <p class="text-xs text-gray-400 mt-2 leading-relaxed">Acción ciclónica con boquilla extensible para la limpieza rápida en vehículos o banco de taller.</p>
                         </div>
                         <div class="border-t border-neutral-800 pt-4 mt-4 flex items-center justify-between">
                             <span class="text-xs bg-neutral-900 px-2.5 py-1 rounded text-gray-300 font-mono font-bold border border-neutral-800">Top 8</span>
-                            <span class="text-xs text-bd-orange font-semibold">Consultar stock</span>
+                            <a href="https://wa.me/34963844805?text=Hola!%20Quisiera%20consultar%20el%20stock%20de%3A%20Aspirador%20de%20Mano%20Dustbuster%20(Black%20%26%20Decker)." target="_blank" rel="noopener noreferrer" class="text-xs text-bd-orange font-bold tracking-wide hover:underline">Consultar stock<span class="sr-only"> de Aspirador de Mano Dustbuster</span></a>
                         </div>
                     </div>
 
                     <div class="min-w-[calc(100%-0px)] sm:min-w-[calc(50%-12px)] lg:min-w-[calc(25%-18px)] bg-neutral-950 p-6 rounded-2xl border border-neutral-800 flex flex-col justify-between h-[360px] shadow-xl">
                         <div>
                             <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">Bosch Professional</span>
-                            <h4 class="font-title font-bold text-base mt-1 text-white">Ingletadora Telescópica</h4>
+                            <h3 class="font-title font-bold text-base mt-1 text-white">Ingletadora Telescópica</h3>
                             <p class="text-xs text-gray-400 mt-2 leading-relaxed">Gran capacidad de corte horizontal y vertical con ajuste de inclinación milimétrico.</p>
                         </div>
                         <div class="border-t border-neutral-800 pt-4 mt-4 flex items-center justify-between">
                             <span class="text-xs bg-neutral-900 px-2.5 py-1 rounded text-gray-300 font-mono font-bold border border-neutral-800">Top 9</span>
-                            <span class="text-xs text-bd-orange font-bold tracking-wide">Consultar stock</span>
+                            <a href="https://wa.me/34963844805?text=Hola!%20Quisiera%20consultar%20el%20stock%20de%3A%20Ingletadora%20Telesc%C3%B3pica%20(Bosch%20Professional)." target="_blank" rel="noopener noreferrer" class="text-xs text-bd-orange font-bold tracking-wide hover:underline">Consultar stock<span class="sr-only"> de Ingletadora Telescópica</span></a>
                         </div>
                     </div>
 
                     <div class="min-w-[calc(100%-0px)] sm:min-w-[calc(50%-12px)] lg:min-w-[calc(25%-18px)] bg-neutral-950 p-6 rounded-2xl border border-neutral-800 flex flex-col justify-between h-[360px] shadow-xl">
                         <div>
                             <span class="text-xs font-bold text-bd-orange uppercase tracking-wider">DeWalt</span>
-                            <h4 class="font-title font-bold text-base mt-1 text-white">Nivel Láser 360°</h4>
+                            <h3 class="font-title font-bold text-base mt-1 text-white">Nivel Láser 360°</h3>
                             <p class="text-xs text-gray-400 mt-2 leading-relaxed">Línea verde de alta visibilidad autonivelante para replanteos perfectos en obra.</p>
                         </div>
                         <div class="border-t border-neutral-800 pt-4 mt-4 flex items-center justify-between">
                             <span class="text-xs bg-neutral-900 px-2.5 py-1 rounded text-gray-300 font-mono font-bold border border-neutral-800">Top 10</span>
-                            <span class="text-xs text-bd-orange font-bold tracking-wide">Consultar stock</span>
+                            <a href="https://wa.me/34963844805?text=Hola!%20Quisiera%20consultar%20el%20stock%20de%3A%20Nivel%20L%C3%A1ser%20360%C2%B0%20(DeWalt)." target="_blank" rel="noopener noreferrer" class="text-xs text-bd-orange font-bold tracking-wide hover:underline">Consultar stock<span class="sr-only"> de Nivel Láser 360°</span></a>
                         </div>
                     </div>
 
@@ -346,16 +348,16 @@
             </div>
 
             <div class="flex justify-end gap-3 mt-6">
-                <button onclick="prevProduct()" class="bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 p-3 rounded-full text-white transition shadow-md cursor-pointer" aria-label="Anterior Producto">
+                <button type="button" data-product="-1" class="bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 p-3 rounded-full text-white transition shadow-md cursor-pointer" aria-label="Anterior Producto">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
                 </button>
-                <button onclick="nextProduct()" class="bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 p-3 rounded-full text-white transition shadow-md cursor-pointer" aria-label="Siguiente Producto">
+                <button type="button" data-product="1" class="bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 p-3 rounded-full text-white transition shadow-md cursor-pointer" aria-label="Siguiente Producto">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                 </button>
             </div>
             
             <div class="mt-12 max-w-xs mx-auto">
-                <button class="w-full bg-neutral-900 text-gray-400 border border-neutral-800 font-semibold px-4 py-3.5 rounded-xl text-xs flex items-center justify-center gap-2 cursor-not-allowed shadow-md" title="Catálogo Completo en preparación">
+                <button type="button" disabled aria-disabled="true" class="w-full bg-neutral-900 text-gray-400 border border-neutral-800 font-semibold px-4 py-3.5 rounded-xl text-xs flex items-center justify-center gap-2 cursor-not-allowed shadow-md" title="Catálogo Completo en preparación">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
                     Descargar Catálogo Completo (Próximamente)
                 </button>
@@ -371,38 +373,38 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 items-center justify-items-center">
                 <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm text-center w-full max-w-[280px] flex flex-col justify-between h-60 transform hover:scale-105 transition-transform duration-300">
                     <div class="flex items-center justify-center flex-grow p-2">
-                        <img src="img/logo-black-decker.png" alt="Black & Decker" class="h-20 w-full object-contain">
+                        <img src="img/logo-black-decker.png" alt="Black & Decker" width="304" height="166" loading="lazy" decoding="async" class="h-20 w-full object-contain">
                     </div>
                     <div>
                         <span class="font-title font-bold text-xs text-neutral-800 block uppercase tracking-wider">Black & Decker</span>
-                        <span class="bg-amber-500/10 text-amber-700 px-2 py-0.5 rounded text-[10px] font-bold inline-block mt-2">GARANTÍA OFICIAL</span>
+                        <span class="bg-amber-500/10 text-amber-700 px-2 py-0.5 rounded text-xs font-bold inline-block mt-2">GARANTÍA OFICIAL</span>
                     </div>
                 </div>
                 <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm text-center w-full max-w-[280px] flex flex-col justify-between h-60 transform hover:scale-105 transition-transform duration-300">
                     <div class="flex items-center justify-center flex-grow p-2">
-                        <img src="img/logo-dewalt.png" alt="DeWalt" class="h-20 w-full object-contain">
+                        <img src="img/logo-dewalt.png" alt="DeWalt" width="360" height="141" loading="lazy" decoding="async" class="h-20 w-full object-contain">
                     </div>
                     <div>
                         <span class="font-title font-bold text-xs text-neutral-800 block uppercase tracking-wider">DeWalt</span>
-                        <span class="bg-amber-500/10 text-amber-700 px-2 py-0.5 rounded text-[10px] font-bold inline-block mt-2">GARANTÍA OFICIAL</span>
+                        <span class="bg-amber-500/10 text-amber-700 px-2 py-0.5 rounded text-xs font-bold inline-block mt-2">GARANTÍA OFICIAL</span>
                     </div>
                 </div>
                 <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm text-center w-full max-w-[280px] flex flex-col justify-between h-60 transform hover:scale-105 transition-transform duration-300">
                     <div class="flex items-center justify-center flex-grow p-2">
-                        <img src="img/logo-stanley.png" alt="Stanley" class="h-20 w-full object-contain">
+                        <img src="img/logo-stanley.png" alt="Stanley" width="360" height="141" loading="lazy" decoding="async" class="h-20 w-full object-contain">
                     </div>
                     <div>
                         <span class="font-title font-bold text-xs text-neutral-800 block uppercase tracking-wider">Stanley</span>
-                        <span class="bg-amber-500/10 text-amber-700 px-2 py-0.5 rounded text-[10px] font-bold inline-block mt-2">GARANTÍA OFICIAL</span>
+                        <span class="bg-amber-500/10 text-amber-700 px-2 py-0.5 rounded text-xs font-bold inline-block mt-2">GARANTÍA OFICIAL</span>
                     </div>
                 </div>
                 <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm text-center w-full max-w-[280px] flex flex-col justify-between h-60 transform hover:scale-105 transition-transform duration-300">
                     <div class="flex items-center justify-center flex-grow p-2">
-                        <img src="img/logo-bosch.png" alt="Bosch" class="h-20 w-full object-contain">
+                        <img src="img/logo-bosch.png" alt="Bosch" width="900" height="541" loading="lazy" decoding="async" class="h-20 w-full object-contain">
                     </div>
                     <div>
                         <span class="font-title font-bold text-xs text-neutral-800 block uppercase tracking-wider">Bosch</span>
-                        <span class="bg-amber-500/10 text-amber-700 px-2 py-0.5 rounded text-[10px] font-bold inline-block mt-2">GARANTÍA OFICIAL</span>
+                        <span class="bg-amber-500/10 text-amber-700 px-2 py-0.5 rounded text-xs font-bold inline-block mt-2">GARANTÍA OFICIAL</span>
                     </div>
                 </div>
             </div>
@@ -425,7 +427,7 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                             </div>
                             <div>
-                                <h4 class="font-bold text-neutral-900">Técnicos Certificados</h4>
+                                <h3 class="font-bold text-neutral-900">Técnicos Certificados</h3>
                                 <p class="text-gray-600 text-sm">Formados directamente bajo los estándares técnicos internacionales de la marca.</p>
                             </div>
                         </div>
@@ -434,7 +436,7 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                             </div>
                             <div>
-                                <h4 class="font-bold text-neutral-900">Diagnóstico sin coste</h4>
+                                <h3 class="font-bold text-neutral-900">Diagnóstico sin coste</h3>
                                 <p class="text-gray-600 text-sm">Sabemos que tu tiempo es valioso. Ofrecemos diagnóstico sin coste y presupuestos claros en plazos ajustados.</p>
                             </div>
                         </div>
@@ -443,7 +445,7 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                             </div>
                             <div>
-                                <h4 class="font-bold text-neutral-900">Atención Local</h4>
+                                <h3 class="font-bold text-neutral-900">Atención Local</h3>
                                 <p class="text-gray-600 text-sm">Ubicados estratégicamente en Valencia para una cómoda recepción de equipos.</p>
                             </div>
                         </div>
@@ -455,7 +457,7 @@
                         Trae tu ticket o factura de compra junto a la herramienta dañada. Nosotros nos encargamos de validar la cobertura con el fabricante para que no tengas que preocuparte por nada.
                     </p>
                     <div class="border-t border-neutral-800 pt-6">
-                        <span class="text-xs text-gray-500 uppercase block tracking-wider">Línea Directa del Taller</span>
+                        <span class="text-xs text-gray-400 uppercase block tracking-wider">Línea Directa del Taller</span>
                         <span class="text-2xl font-mono text-bd-orange font-bold block mt-1">963 84 48 05</span>
                     </div>
                 </div>
@@ -561,19 +563,19 @@
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
                         <div class="bg-gray-50 p-4 rounded-xl border border-gray-100 flex flex-col justify-between">
                             <div>
-                                <span class="font-bold text-neutral-900 block mb-1">📍 Dirección</span>
+                                <span class="font-bold text-neutral-900 block mb-1"><span aria-hidden="true">📍</span> Dirección</span>
                                 <span class="text-gray-600 text-xs">C/ de Sant Ignasi de Loiola, 23<br>Extramurs, 46008 València</span>
                             </div>
                         </div>
                         <div class="bg-gray-50 p-4 rounded-xl border border-gray-100 flex flex-col justify-between">
                             <div>
-                                <span class="font-bold text-neutral-900 block mb-1">📞 Teléfono</span>
+                                <span class="font-bold text-neutral-900 block mb-1"><span aria-hidden="true">📞</span> Teléfono</span>
                                 <span class="text-gray-600 text-xs">Línea fija directa:<br><a href="tel:+34963844805" class="text-neutral-900 font-bold hover:underline">963 84 48 05</a></span>
                             </div>
                         </div>
                         <div class="bg-gray-50 p-4 rounded-xl border border-green-100 bg-green-50/30 flex flex-col justify-between">
                             <div>
-                                <span class="font-bold text-green-700 block mb-1">💬 WhatsApp</span>
+                                <span class="font-bold text-green-700 block mb-1"><span aria-hidden="true">💬</span> WhatsApp</span>
                                 <span class="text-gray-600 text-xs">Consulta inmediata:<br><a href="https://wa.me/34963844805" target="_blank" rel="noopener noreferrer" class="text-green-600 font-bold hover:underline">Enviar Mensaje</a></span>
                             </div>
                         </div>
@@ -583,13 +585,15 @@
                     <div id="map-placeholder" class="absolute inset-0 bg-neutral-100 flex flex-col items-center justify-center text-center p-6 gap-3">
                         <p class="text-sm text-gray-600 max-w-xs">Para mostrar el mapa de Google necesitamos tu consentimiento para cookies de terceros.</p>
                         <button type="button" data-cookie-accept class="bg-neutral-900 hover:bg-neutral-800 text-white text-sm font-bold px-5 py-2.5 rounded-lg cursor-pointer">Aceptar y ver mapa</button>
-                        <a href="https://www.google.com/maps/search/?api=1&query=C%2F+de+Sant+Ignasi+de+Loiola+23+46008+Valencia" target="_blank" rel="noopener noreferrer" class="text-xs text-bd-orange font-semibold hover:underline">Abrir en Google Maps</a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=C%2F+de+Sant+Ignasi+de+Loiola+23+46008+Valencia" target="_blank" rel="noopener noreferrer" class="text-xs text-orange-700 font-semibold hover:underline">Abrir en Google Maps</a>
                     </div>
-                    <iframe title="Mapa de ubicación de Servi-González" class="hidden absolute inset-0 w-full h-full" frameborder="0" loading="lazy" data-consent-src="https://maps.google.com/maps?q=C/%20de%20Sant%20Ignasi%20de%20Loiola,%2023,%20Extramurs,%2046008%20Val%C3%A8ncia&t=&z=16&ie=UTF8&iwloc=&output=embed" data-consent-placeholder="map-placeholder"></iframe>
+                    <iframe title="Mapa de ubicación de Servi-González" class="hidden absolute inset-0 w-full h-full" frameborder="0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" data-consent-src="https://maps.google.com/maps?q=C/%20de%20Sant%20Ignasi%20de%20Loiola,%2023,%20Extramurs,%2046008%20Val%C3%A8ncia&t=&z=16&ie=UTF8&iwloc=&output=embed" data-consent-placeholder="map-placeholder"></iframe>
                 </div>
             </div>
         </div>
     </section>
+
+    </main>
 
     <footer class="bg-neutral-900 text-gray-400 text-sm border-t border-neutral-800 pt-16 pb-8 mt-20">
         <div class="container mx-auto px-6">
@@ -604,9 +608,10 @@
                     </p>
                 </div>
                 <div>
-                    <h4 class="text-white font-bold mb-4 text-xs uppercase tracking-widest text-neutral-200">Sitemap</h4>
+                    <h3 class="text-white font-bold mb-4 text-xs uppercase tracking-widest text-neutral-200">Sitemap</h3>
                     <ul class="space-y-2.5 text-xs">
                         <li><a href="#inicio" class="hover:text-white hover:underline transition">Inicio</a></li>
+                        <li><a href="#ventas" class="hover:text-white hover:underline transition">Venta de Maquinaria</a></li>
                         <li><a href="#marcas" class="hover:text-white hover:underline transition">Garantías Oficiales</a></li>
                         <li><a href="#servicios" class="hover:text-white hover:underline transition">Nuestros Servicios</a></li>
                         <li><a href="#ventajas" class="hover:text-white hover:underline transition">Por qué elegirnos</a></li>
@@ -614,33 +619,33 @@
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white font-bold mb-4 text-xs uppercase tracking-widest text-neutral-200">Contacto</h4>
+                    <h3 class="text-white font-bold mb-4 text-xs uppercase tracking-widest text-neutral-200">Contacto</h3>
                     <ul class="space-y-3 text-xs">
                         <li class="flex items-start gap-2">
-                            <span class="text-neutral-500 mt-0.5">📍</span>
+                            <span class="text-neutral-500 mt-0.5" aria-hidden="true">📍</span>
                             <span class="text-neutral-400">C/ de Sant Ignasi de Loiola, 23<br>Extramurs, 46008 València</span>
                         </li>
                         <li class="flex items-center gap-2">
-                            <span class="text-neutral-500">📞</span>
+                            <span class="text-neutral-500" aria-hidden="true">📞</span>
                             <a href="tel:+34963844805" class="text-neutral-300 hover:text-bd-orange font-semibold transition">963 84 48 05</a>
                         </li>
                         <li class="flex items-center gap-2">
-                            <span class="text-neutral-500">⏰</span>
+                            <span class="text-neutral-500" aria-hidden="true">⏰</span>
                             <span class="text-neutral-400">Lun - Vie: 8:00 - 14:00 y 16:00 - 19:00</span>
                         </li>
                     </ul>
                 </div>
                 <div class="space-y-4">
-                    <h4 class="text-white font-bold mb-4 text-xs uppercase tracking-widest text-neutral-200">Garantía Certificada</h4>
+                    <h3 class="text-white font-bold mb-4 text-xs uppercase tracking-widest text-neutral-200">Garantía Certificada</h3>
                     <p class="text-neutral-400 text-xs leading-relaxed">
                         Trabajamos exclusivamente con repuestos originales de fábrica, manteniendo la validez de compra de tus equipos Black & Decker, DeWalt, Stanley y Bosch.
                     </p>
                     <div class="grid grid-cols-1 bg-neutral-950 px-3 py-2 rounded-lg border border-neutral-800">
-                        <span class="text-[11px] text-gray-300 font-medium uppercase tracking-wider text-center">🛡️ Taller Autorizado Valencia</span>
+                        <span class="text-[11px] text-gray-300 font-medium uppercase tracking-wider text-center"><span aria-hidden="true">🛡️</span> Taller Autorizado Valencia</span>
                     </div>
                 </div>
             </div>
-            <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-neutral-500">
+            <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-neutral-400">
                 <div>
                     &copy; 2026 SERVI-GONZÁLEZ. Todos los derechos reservados.
                 </div>
@@ -649,6 +654,7 @@
                     <a href="privacidad.html" class="hover:text-neutral-300 transition">Política de Privacidad</a>
                     <a href="cookies.html" class="hover:text-neutral-300 transition">Política de Cookies</a>
                     <a href="terminos.html" class="hover:text-neutral-300 transition">Términos y Condiciones</a>
+                    <a href="condiciones-reparacion.html" class="hover:text-neutral-300 transition">Condiciones de reparación</a>
                     <button type="button" data-cookie-settings class="hover:text-neutral-300 transition cursor-pointer">Configurar cookies</button>
                 </div>
             </div>
@@ -664,7 +670,7 @@
             <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.93 0c3.167.001 6.145 1.233 8.384 3.472 2.239 2.239 3.469 5.218 3.467 8.387-.006 6.582-5.342 11.93-11.875 11.93-2.012-.002-3.993-.513-5.752-1.487L0 24zm6.49-4.144c1.649.979 3.262 1.489 4.912 1.49 5.305-.005 9.622-4.321 9.626-9.626.002-2.57-1.002-4.986-2.825-6.81-1.821-1.822-4.234-2.824-6.804-2.825-5.307 0-9.624 4.318-9.629 9.625-.002 1.722.463 3.4 1.345 4.9l-.994 3.633 3.737-.982zM17.17 14.7c-.29-.145-1.72-.85-1.99-.95-.268-.1-.465-.145-.66.145-.195.29-.755.95-.925 1.14-.17.19-.34.215-.63.07-.29-.145-1.225-.45-2.335-1.44-.863-.77-1.445-1.72-1.615-2.01-.17-.29-.018-.448.128-.59.13-.13.29-.34.435-.51.145-.17.19-.29.29-.485.1-.19.05-.36-.025-.51-.075-.145-.66-1.59-.905-2.18-.24-.57-.48-.49-.66-.5-.17-.01-.365-.01-.56-.01-.195 0-.51.075-.775.365-.265.29-1.01.99-1.01 2.415 0 1.425 1.04 2.8 1.185 3 .145.19 2.05 3.13 4.965 4.385.695.3 1.235.48 1.66.615.7.22 1.335.19 1.84.115.56-.085 1.72-.7 1.96-1.38.24-.68.24-1.265.17-1.38-.075-.115-.265-.195-.555-.34z"/>
         </svg>
         <span class="absolute right-16 bg-neutral-900 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-md pointer-events-none">
-            ¿Hablamos por WhatsApp? 💬
+            ¿Hablamos por WhatsApp?
         </span>
     </a>
 
