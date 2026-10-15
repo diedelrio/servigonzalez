@@ -1,0 +1,31 @@
+<!--meta {"title":"Contacto y ubicación","description":"Servi-González, C/ de Sant Ignasi de Loiola 23, Valencia. Teléfono 963 84 48 05, WhatsApp y correo. Horario de lunes a viernes.","nav":"contacto"} -->
+    <main id="contenido">
+        <section class="mx-auto max-w-7xl px-6 lg:px-10 pt-14 pb-12 lg:pt-20 grid lg:grid-cols-2 gap-12">
+            <div>
+                <h1 class="font-title text-4xl sm:text-5xl font-bold tracking-tight leading-[1.05] text-balance">Contacto y ubicación</h1>
+                <p class="mt-6 text-lg text-muted max-w-xl leading-relaxed">Llámanos, escríbenos o pásate por el taller. Para reparar una herramienta no necesitas cita previa.</p>
+
+                <dl class="mt-10 border-t-2 border-ink">
+                    <div class="grid sm:grid-cols-[140px_1fr] gap-1 sm:gap-6 py-5 border-b border-line"><dt class="font-semibold text-muted">Dirección</dt><dd>C/ de Sant Ignasi de Loiola, 23<br>Extramurs, 46008 València</dd></div>
+                    <div class="grid sm:grid-cols-[140px_1fr] gap-1 sm:gap-6 py-5 border-b border-line"><dt class="font-semibold text-muted">Teléfono</dt><dd><a href="tel:+34963844805" class="font-semibold text-brand-dark underline underline-offset-4">963 84 48 05</a></dd></div>
+                    <div class="grid sm:grid-cols-[140px_1fr] gap-1 sm:gap-6 py-5 border-b border-line"><dt class="font-semibold text-muted">WhatsApp</dt><dd><a href="https://wa.me/34963844805" target="_blank" rel="noopener noreferrer" class="font-semibold text-brand-dark underline underline-offset-4">Enviar un mensaje</a></dd></div>
+                    <div class="grid sm:grid-cols-[140px_1fr] gap-1 sm:gap-6 py-5 border-b border-line"><dt class="font-semibold text-muted">Correo</dt><dd><a href="mailto:contacto@servicegonzalez.es" class="font-semibold text-brand-dark underline underline-offset-4">contacto@servicegonzalez.es</a></dd></div>
+                    <div class="grid sm:grid-cols-[140px_1fr] gap-1 sm:gap-6 py-5 border-b border-line"><dt class="font-semibold text-muted">Horario</dt><dd>Lunes a viernes<br>8:00 a 14:00 y 16:00 a 19:00</dd></div>
+                </dl>
+
+                <div class="mt-8 flex flex-wrap gap-3">
+                    <button type="button" data-modal-open="solicitarReparacion" data-modal-title="Solicitar recogida y reparación" class="btn btn-primary btn-lg">Solicitar reparación</button>
+                    <button type="button" data-modal-open="consultarReparacion" data-modal-title="Consultar estado de mi reparación" class="btn btn-lg">Consultar mi reparación</button>
+                </div>
+            </div>
+
+            <div class="w-full h-96 lg:h-auto min-h-[380px] rounded-2xl overflow-hidden border border-line relative bg-white">
+                <div id="map-placeholder" class="absolute inset-0 flex flex-col items-center justify-center text-center p-6 gap-3">
+                    <p class="text-sm text-muted max-w-xs">Para mostrar el mapa de Google necesitamos tu consentimiento para cookies de terceros.</p>
+                    <button type="button" data-cookie-accept class="btn btn-primary">Aceptar y ver mapa</button>
+                    <a href="https://www.google.com/maps/search/?api=1&query=C%2F+de+Sant+Ignasi+de+Loiola+23+46008+Valencia" target="_blank" rel="noopener noreferrer" class="text-sm text-brand-dark font-semibold underline underline-offset-4">Abrir en Google Maps</a>
+                </div>
+                <iframe title="Mapa de ubicación de Servi-González" class="hidden absolute inset-0 w-full h-full" frameborder="0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" data-consent-src="https://maps.google.com/maps?q=C/%20de%20Sant%20Ignasi%20de%20Loiola,%2023,%20Extramurs,%2046008%20Val%C3%A8ncia&t=&z=16&ie=UTF8&iwloc=&output=embed" data-consent-placeholder="map-placeholder"></iframe>
+            </div>
+        </section>
+    </main>

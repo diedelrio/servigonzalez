@@ -1,0 +1,802 @@
+[
+ {
+  "brand": "bosch",
+  "brandName": "Bosch Professional",
+  "sku": "06019K3000",
+  "model": "GSR 18V-55",
+  "category": "Taladros",
+  "description": "Taladro atornillador a batería de 18V, motor Brushless sin escobillas, par de giro de 55 Nm y diseño compacto."
+ },
+ {
+  "brand": "bosch",
+  "brandName": "Bosch Professional",
+  "sku": "06011A8000",
+  "model": "GBH 2-28",
+  "category": "Martillos",
+  "description": "Martillo perforador SDS-plus con control de vibración (Vibration Control) y 3.2 J de energía de impacto."
+ },
+ {
+  "brand": "bosch",
+  "brandName": "Bosch Professional",
+  "sku": "0601394000",
+  "model": "GWS 7-115",
+  "category": "Amoladoras",
+  "description": "Amoladora angular pequeña de 720W y 115 mm, diseño ergonómico de perímetro reducido para uso profesional."
+ },
+ {
+  "brand": "bosch",
+  "brandName": "Bosch Professional",
+  "sku": "06016H6000",
+  "model": "GKS 18V-57",
+  "category": "Sierras",
+  "description": "Sierra circular a batería de 18V con profundidad de corte de 57 mm, ideal para cortes precisos en madera."
+ },
+ {
+  "brand": "bosch",
+  "brandName": "Bosch Professional",
+  "sku": "06015A5000",
+  "model": "GST 18V-LI B",
+  "category": "Sierras",
+  "description": "Sierra de calar a batería de 18V con empuñadura de ballesta, cambio de hoja sin herramientas y luz LED."
+ },
+ {
+  "brand": "bosch",
+  "brandName": "Bosch Professional",
+  "sku": "0601217100",
+  "model": "GSB 13 RE",
+  "category": "Taladros",
+  "description": "Taladro percutor compacto de 600W, velocidad variable, empuñadura ergonómica y portabrocas de corona."
+ },
+ {
+  "brand": "bosch",
+  "brandName": "Bosch Professional",
+  "sku": "0601388100",
+  "model": "GWS 18V-10",
+  "category": "Amoladoras",
+  "description": "Amoladora angular a batería de 18V sin escobillas, equivalente a 1000W con sistema Drop Control."
+ },
+ {
+  "brand": "bosch",
+  "brandName": "Bosch Professional",
+  "sku": "06019G0100",
+  "model": "GSB 18V-65 C",
+  "category": "Taladros",
+  "description": "Taladro percutor inteligente de 18V con conectividad Bluetooth, KickBack Control y motor sin escobillas."
+ },
+ {
+  "brand": "bosch",
+  "brandName": "Bosch Professional",
+  "sku": "0601111100",
+  "model": "GSB 20-2 RE",
+  "category": "Taladros",
+  "description": "Taladro percutor de dos velocidades de 850W con carcasa de engranajes metálica para máxima robustez."
+ },
+ {
+  "brand": "bosch",
+  "brandName": "Bosch Professional",
+  "sku": "06011A4000",
+  "model": "GBH 2-20 D",
+  "category": "Martillos",
+  "description": "Martillo perforador ligero SDS-plus de 650W con 1.7 J de impacto y velocidad variable."
+ },
+ {
+  "brand": "bosch",
+  "brandName": "Bosch Professional",
+  "sku": "06012A3000",
+  "model": "GBH 4-32 DFR",
+  "category": "Martillos",
+  "description": "Martillo combinado SDS-plus de 900W con portabrocas intercambiable y función de cincelado."
+ },
+ {
+  "brand": "bosch",
+  "brandName": "Bosch Professional",
+  "sku": "06019C3000",
+  "model": "GWS 18V-15 SC",
+  "category": "Amoladoras",
+  "description": "Amoladora de 18V BITURBO Brushless de 125mm con regulación de velocidad y control de contragolpe."
+ },
+ {
+  "brand": "bosch",
+  "brandName": "Bosch Professional",
+  "sku": "0601379000",
+  "model": "GWS 22-230 H",
+  "category": "Amoladoras",
+  "description": "Amoladora grande de 2200W y 230 mm para trabajos pesados de corte y desbaste en metal y obra."
+ },
+ {
+  "brand": "bosch",
+  "brandName": "Bosch Professional",
+  "sku": "06016A3000",
+  "model": "GKS 190",
+  "category": "Sierras",
+  "description": "Sierra circular de 1400W con disco de 190 mm y soplador de aire integrado para línea de corte limpia."
+ },
+ {
+  "brand": "bosch",
+  "brandName": "Bosch Professional",
+  "sku": "060158F000",
+  "model": "GST 150 BCE",
+  "category": "Sierras",
+  "description": "Sierra de calar de 780W con diseño de puente, corte potente hasta 150 mm en madera y velocidad constante."
+ },
+ {
+  "brand": "bosch",
+  "brandName": "Bosch Professional",
+  "sku": "0601066H00",
+  "model": "GCO 14-24",
+  "category": "Tronzadoras",
+  "description": "Tronzadora sensitiva para metal de 2400W con disco de 355 mm y sistema de sujeción rápida."
+ },
+ {
+  "brand": "bosch",
+  "brandName": "Bosch Professional",
+  "sku": "06015B2300",
+  "model": "GSA 18V-LI",
+  "category": "Sierras sable",
+  "description": "Sierra sable a batería de 18V con sistema Electronic Motor Protection y cambio de hoja SDS."
+ },
+ {
+  "brand": "bosch",
+  "brandName": "Bosch Professional",
+  "sku": "0601494000",
+  "model": "GLL 3-80 CG",
+  "category": "Medición",
+  "description": "Láser de líneas cruzadas 3x360 grados con tecnología de verde brillante y conectividad Bluetooth."
+ },
+ {
+  "brand": "bosch",
+  "brandName": "Bosch Professional",
+  "sku": "0601072900",
+  "model": "GLD 40",
+  "category": "Medición",
+  "description": "Medidor láser de distancias digital de hasta 40 metros con certificación ISO y pantalla iluminada."
+ },
+ {
+  "brand": "bosch",
+  "brandName": "Bosch Professional",
+  "sku": "06016B5000",
+  "model": "GKT 55 GCE",
+  "category": "Sierras",
+  "description": "Sierra de incisión de 1400W compatible con rieles guía FSN para cortes rectos de alta precisión."
+ },
+ {
+  "brand": "bosch",
+  "brandName": "Bosch Professional",
+  "sku": "06013A2000",
+  "model": "GWS 12-125 S",
+  "category": "Amoladoras",
+  "description": "Amoladora de 125 mm y 1200W con preselección de revoluciones y protección contra rearranque."
+ },
+ {
+  "brand": "bosch",
+  "brandName": "Bosch Professional",
+  "sku": "06019H2100",
+  "model": "GDR 18V-200",
+  "category": "Atornilladores",
+  "description": "Atornillador de impacto a batería de 18V con par máximo de 200 Nm y diseño de cabeza muy corto."
+ },
+ {
+  "brand": "bosch",
+  "brandName": "Bosch Professional",
+  "sku": "06019G8100",
+  "model": "GDS 18V-1050 H",
+  "category": "Atornilladores",
+  "description": "Llave de impacto de alto rendimiento BITURBO Brushless de 18V con par de apriete de 1050 Nm."
+ },
+ {
+  "brand": "bosch",
+  "brandName": "Bosch Professional",
+  "sku": "06012A5000",
+  "model": "GBH 18V-26",
+  "category": "Martillos",
+  "description": "Martillo perforador a batería SDS-plus de 18V con control de vibración y función KickBack."
+ },
+ {
+  "brand": "bosch",
+  "brandName": "Bosch Professional",
+  "sku": "060114C000",
+  "model": "GSB 24-2",
+  "category": "Taladros",
+  "description": "Taladro percutor profesional de dos velocidades y 1100W con embrague de seguridad Electronic Safe."
+ },
+ {
+  "brand": "black-decker",
+  "brandName": "Black & Decker",
+  "sku": "BEH710SA32-QS",
+  "model": "BEH710",
+  "category": "Taladros",
+  "description": "Taladro percutor con cable de 710W, acción percutora para mampostería e incluye maletín y 32 accesorios."
+ },
+ {
+  "brand": "black-decker",
+  "brandName": "Black & Decker",
+  "sku": "BDCHD18KB-QW",
+  "model": "BDCHD18KB",
+  "category": "Taladros",
+  "description": "Taladro percutor a batería de 18V con tecnología de Litio, 40 Nm de par, doble batería y maletín."
+ },
+ {
+  "brand": "black-decker",
+  "brandName": "Black & Decker",
+  "sku": "BDCDD12-XJ",
+  "model": "BDCDD12",
+  "category": "Taladros",
+  "description": "Taladro atornillador ultracompacto a batería de 10.8V / 12V, ideal para montaje de muebles domésticos."
+ },
+ {
+  "brand": "black-decker",
+  "brandName": "Black & Decker",
+  "sku": "BEHS03K-QS",
+  "model": "BEHS03K",
+  "category": "Martillos",
+  "description": "Martillo perforador SDS-Plus de 1250W con 3 modos de trabajo (taladro, percusión y cincelado)."
+ },
+ {
+  "brand": "black-decker",
+  "brandName": "Black & Decker",
+  "sku": "BEG010-QS",
+  "model": "BEG010",
+  "category": "Amoladoras",
+  "description": "Amoladora angular de 710W y 115 mm, interruptor lateral deslizante, arranque suave y empuñadura ajustable."
+ },
+ {
+  "brand": "black-decker",
+  "brandName": "Black & Decker",
+  "sku": "BES510-QS",
+  "model": "BES510",
+  "category": "Sierras",
+  "description": "Sierra circular de 1400W y disco de 190 mm, con guía láser de precisión y ajuste rápido de profundidad."
+ },
+ {
+  "brand": "black-decker",
+  "brandName": "Black & Decker",
+  "sku": "BESJS600-QS",
+  "model": "BESJS600",
+  "category": "Sierras",
+  "description": "Sierra de calar de 600W con acción pendular de 4 etapas, soplador de polvo integrado y velocidad variable."
+ },
+ {
+  "brand": "black-decker",
+  "brandName": "Black & Decker",
+  "sku": "BEG220-QS",
+  "model": "BEG220",
+  "category": "Amoladoras",
+  "description": "Amoladora potente de 900W y 125 mm con caja de engranajes de aluminio y bloqueo de eje."
+ },
+ {
+  "brand": "black-decker",
+  "brandName": "Black & Decker",
+  "sku": "BDCDC18KB-QW",
+  "model": "BDCDC18KB",
+  "category": "Taladros",
+  "description": "Taladro atornillador inalámbrico de 18V con 2 baterías de Ion-Litio de 1.5 Ah y maletín de transporte."
+ },
+ {
+  "brand": "black-decker",
+  "brandName": "Black & Decker",
+  "sku": "BCBLV3625L1-QW",
+  "model": "BCBLV3625",
+  "category": "Jardín",
+  "description": "Soplador y aspirador de hojas a batería de 36V con control de velocidad variable y tubo ancho."
+ },
+ {
+  "brand": "black-decker",
+  "brandName": "Black & Decker",
+  "sku": "BESTA525QS-QS",
+  "model": "BESTA525",
+  "category": "Jardín",
+  "description": "Cortabordes eléctrico de 450W con tecnología E-Drive y rueda guía para cantos de césped."
+ },
+ {
+  "brand": "black-decker",
+  "brandName": "Black & Decker",
+  "sku": "BDCDS18-QW",
+  "model": "BDCDS18",
+  "category": "Lijadoras",
+  "description": "Lijadora ratón a batería de 18V ideal para espacios reducidos y extracción eficiente de polvo."
+ },
+ {
+  "brand": "black-decker",
+  "brandName": "Black & Decker",
+  "sku": "KA280LK-QS",
+  "model": "KA280LK",
+  "category": "Lijadoras",
+  "description": "Lijadora multiuso 4 en 1 de 220W (orbital, detalle y excéntrica) con maletín y accesorios completos."
+ },
+ {
+  "brand": "black-decker",
+  "brandName": "Black & Decker",
+  "sku": "BDCR18-XJ",
+  "model": "BDCR18",
+  "category": "Sierras sable",
+  "description": "Sierra sable inalámbrica de 18V con cambio de hoja sin herramientas y diseño ergonómico."
+ },
+ {
+  "brand": "black-decker",
+  "brandName": "Black & Decker",
+  "sku": "BDCROS18-XJ",
+  "model": "BDCROS18",
+  "category": "Lijadoras",
+  "description": "Lijadora excéntrica orbital a batería de 18V con colector de polvo con sistema ciclónico."
+ },
+ {
+  "brand": "black-decker",
+  "brandName": "Black & Decker",
+  "sku": "BXPW1600PE",
+  "model": "BXPW1600PE",
+  "category": "Limpieza",
+  "description": "Hidrolimpiadora de alta presión de 1600W, caudal de 420 l/h con accesorios para patio y coche."
+ },
+ {
+  "brand": "black-decker",
+  "brandName": "Black & Decker",
+  "sku": "BXPW2000XE",
+  "model": "BXPW2000XE",
+  "category": "Limpieza",
+  "description": "Hidrolimpiadora de alta presión de 2000W, 140 bar con carro de transporte y boquilla rotativa."
+ },
+ {
+  "brand": "black-decker",
+  "brandName": "Black & Decker",
+  "sku": "CD115-QS",
+  "model": "CD115",
+  "category": "Amoladoras",
+  "description": "Amoladora básica de 710W y 115 mm con interruptor lateral de seguridad para tareas de bricolaje."
+ },
+ {
+  "brand": "black-decker",
+  "brandName": "Black & Decker",
+  "sku": "BDEDMT8-QS",
+  "model": "BDEDMT8",
+  "category": "Multiherramientas",
+  "description": "Taladro atornillador modular Multievolution de 18V con cabezales intercambiables."
+ },
+ {
+  "brand": "black-decker",
+  "brandName": "Black & Decker",
+  "sku": "BEW210-QS",
+  "model": "BEW210",
+  "category": "Lijadoras",
+  "description": "Lijadora orbital de palma de 200W con sistema de fijación de lija por pinza y velcro."
+ },
+ {
+  "brand": "black-decker",
+  "brandName": "Black & Decker",
+  "sku": "BDHT0-28104",
+  "model": "BDHT0-28104",
+  "category": "Medición",
+  "description": "Nivel láser autonivelante en cruz con soporte magnético de pared integrado."
+ },
+ {
+  "brand": "black-decker",
+  "brandName": "Black & Decker",
+  "sku": "AS36LN-QW",
+  "model": "AS36LN",
+  "category": "Atornilladores",
+  "description": "Atornillador de 3.6V articulado con batería de Ion-Litio y luz LED de trabajo integrada."
+ },
+ {
+  "brand": "black-decker",
+  "brandName": "Black & Decker",
+  "sku": "BDCH900K-QS",
+  "model": "BDCH900",
+  "category": "Martillos",
+  "description": "Martillo perforador electroneumático de 650W con maletín y brocas SDS-Plus incluidas."
+ },
+ {
+  "brand": "black-decker",
+  "brandName": "Black & Decker",
+  "sku": "BES700-QS",
+  "model": "BES700",
+  "category": "Sierras",
+  "description": "Sierra de inglete telescópica de 1600W con disco de 216 mm y línea de corte por sombra LED."
+ },
+ {
+  "brand": "black-decker",
+  "brandName": "Black & Decker",
+  "sku": "BEMW451BH-QS",
+  "model": "BEMW451",
+  "category": "Jardín",
+  "description": "Cortacésped eléctrico de 1200W con ancho de corte de 32 cm y depósito colector de 35 litros."
+ },
+ {
+  "brand": "dewalt",
+  "brandName": "DeWalt",
+  "sku": "DCD796P2-QW",
+  "model": "DCD796",
+  "category": "Taladros",
+  "description": "Taladro atornillador con percusión sin escobillas 18V XR con 2 baterías de 5.0Ah y maletín TSTAK."
+ },
+ {
+  "brand": "dewalt",
+  "brandName": "DeWalt",
+  "sku": "DCH273P2-QW",
+  "model": "DCH273",
+  "category": "Martillos",
+  "description": "Martillo rotativo SDS-Plus 18V XR Brushless con capacidad de perforación de 24mm y 2.1J de impacto."
+ },
+ {
+  "brand": "dewalt",
+  "brandName": "DeWalt",
+  "sku": "DCG405N-XJ",
+  "model": "DCG405",
+  "category": "Amoladoras",
+  "description": "Amoladora angular 18V XR 125mm sin escobillas con freno electrónico y embrague mecánico."
+ },
+ {
+  "brand": "dewalt",
+  "brandName": "DeWalt",
+  "sku": "DWE560-QS",
+  "model": "DWE560",
+  "category": "Sierras",
+  "description": "Sierra circular de alta potencia de 1350W con diámetro de disco de 165mm y soplador de polvo."
+ },
+ {
+  "brand": "dewalt",
+  "brandName": "DeWalt",
+  "sku": "DCS331N-XJ",
+  "model": "DCS331",
+  "category": "Sierras",
+  "description": "Sierra de calar 18V XR con mecanismo antivibración y zapata ajustable sin herramientas con bisel."
+ },
+ {
+  "brand": "dewalt",
+  "brandName": "DeWalt",
+  "sku": "DCD701D2-QW",
+  "model": "DCD701",
+  "category": "Taladros",
+  "description": "Taladro atornillador ultracompacto 12V XR con motor sin escobillas y portabrocas de 10mm."
+ },
+ {
+  "brand": "dewalt",
+  "brandName": "DeWalt",
+  "sku": "DWE4157-QS",
+  "model": "DWE4157",
+  "category": "Amoladoras",
+  "description": "Amoladora pequeña de 115mm y 900W con protección contra rearranque y engranajes de perfil bajo."
+ },
+ {
+  "brand": "dewalt",
+  "brandName": "DeWalt",
+  "sku": "DCD996P2-QW",
+  "model": "DCD996",
+  "category": "Taladros",
+  "description": "Taladro percutor de tres velocidades sin escobillas 18V XR con motor de alta potencia y 95 Nm."
+ },
+ {
+  "brand": "dewalt",
+  "brandName": "DeWalt",
+  "sku": "DCF887N-XJ",
+  "model": "DCF887",
+  "category": "Atornilladores",
+  "description": "Atornillador de impacto 18V XR Brushless de 3 velocidades con par máximo de 205 Nm."
+ },
+ {
+  "brand": "dewalt",
+  "brandName": "DeWalt",
+  "sku": "DCH133M1-QW",
+  "model": "DCH133",
+  "category": "Martillos",
+  "description": "Martillo perforador SDS-Plus 18V XR con 2.6J de energía de impacto y modo cincelado."
+ },
+ {
+  "brand": "dewalt",
+  "brandName": "DeWalt",
+  "sku": "DCG418T2-QW",
+  "model": "DCG418",
+  "category": "Amoladoras",
+  "description": "Amoladora FLEXVOLT 54V de 125mm con rendimiento equivalente a herramienta con cable de 1500W."
+ },
+ {
+  "brand": "dewalt",
+  "brandName": "DeWalt",
+  "sku": "DCS570N-XJ",
+  "model": "DCS570",
+  "category": "Sierras",
+  "description": "Sierra circular 18V XR con motor sin escobillas y disco de 184mm para cortes profundos."
+ },
+ {
+  "brand": "dewalt",
+  "brandName": "DeWalt",
+  "sku": "DCS382N-XJ",
+  "model": "DCS382",
+  "category": "Sierras sable",
+  "description": "Sierra sable 18V XR Brushless compacta con mecanismo de cambio rápido de hoja sin llave."
+ },
+ {
+  "brand": "dewalt",
+  "brandName": "DeWalt",
+  "sku": "DWE7492-QS",
+  "model": "DWE7492",
+  "category": "Sierras",
+  "description": "Sierra de mesa profesional de 2000W con capacidad de corte longitudinal de 825mm."
+ },
+ {
+  "brand": "dewalt",
+  "brandName": "DeWalt",
+  "sku": "DW745-QS",
+  "model": "DW745",
+  "category": "Sierras",
+  "description": "Sierra de mesa compacta de jobsite de 1700W con diseño de jaula antivuelco de acero."
+ },
+ {
+  "brand": "dewalt",
+  "brandName": "DeWalt",
+  "sku": "DWD522KS-QS",
+  "model": "DWD522",
+  "category": "Taladros",
+  "description": "Taladro percutor de alta resistencia de dos velocidades y 950W con maletín de transporte."
+ },
+ {
+  "brand": "dewalt",
+  "brandName": "DeWalt",
+  "sku": "DWE6423-QS",
+  "model": "DWE6423",
+  "category": "Lijadoras",
+  "description": "Lijadora excéntrica de 125mm y 280W con velocidad variable y diseño de baja vibración."
+ },
+ {
+  "brand": "dewalt",
+  "brandName": "DeWalt",
+  "sku": "D25133K-QS",
+  "model": "D25133",
+  "category": "Martillos",
+  "description": "Martillo combinado SDS-Plus de 800W con 2.6J y 3 modos de operación para obra."
+ },
+ {
+  "brand": "dewalt",
+  "brandName": "DeWalt",
+  "sku": "DWS774-QS",
+  "model": "DWS774",
+  "category": "Sierras",
+  "description": "Ingletadora telescópica radial de 1400W con disco de 216mm y sistema de guía XPS."
+ },
+ {
+  "brand": "dewalt",
+  "brandName": "DeWalt",
+  "sku": "DWE305-QS",
+  "model": "DWE305",
+  "category": "Sierras sable",
+  "description": "Sierra sable industrial de 1100W con abrazadera de hoja de 4 posiciones."
+ },
+ {
+  "brand": "dewalt",
+  "brandName": "DeWalt",
+  "sku": "DCW604N-XJ",
+  "model": "DCW604",
+  "category": "Fresadoras",
+  "description": "Tupí y rebajadora compacta combinada a batería de 18V XR con motor sin escobillas."
+ },
+ {
+  "brand": "dewalt",
+  "brandName": "DeWalt",
+  "sku": "DCE089D1G-QW",
+  "model": "DCE089D1G",
+  "category": "Medición",
+  "description": "Láser de líneas cruzadas autonivelante verde 3x360 grados con batería recargable XR 12V."
+ },
+ {
+  "brand": "dewalt",
+  "brandName": "DeWalt",
+  "sku": "DCP580N-XJ",
+  "model": "DCP580",
+  "category": "Cepillos",
+  "description": "Cepillo de carpintero a batería 18V XR sin escobillas con anchura de corte de 82mm."
+ },
+ {
+  "brand": "dewalt",
+  "brandName": "DeWalt",
+  "sku": "DCS7485T2-QW",
+  "model": "DCS7485",
+  "category": "Sierras",
+  "description": "Sierra de mesa FLEXVOLT 54V sin escobillas con disco de 210mm portátil."
+ },
+ {
+  "brand": "dewalt",
+  "brandName": "DeWalt",
+  "sku": "DCE530N-XJ",
+  "model": "DCE530N",
+  "category": "Pistolas de calor",
+  "description": "Pistola de aire caliente a batería 18V XR con dos ajustes de temperatura para aplicaciones técnicas."
+ },
+ {
+  "brand": "stanley",
+  "brandName": "Stanley",
+  "sku": "STEL501-QS",
+  "model": "STEL501",
+  "category": "Taladros",
+  "description": "Taladro percutor de 850W con velocidad variable reversible, carcasa metálica robusta y empuñadura."
+ },
+ {
+  "brand": "stanley",
+  "brandName": "Stanley",
+  "sku": "SME360K-QS",
+  "model": "SME360K",
+  "category": "Martillos",
+  "description": "Martillo demoledor y perforador SDS-Plus de 800W con selector de 3 modos y capacidad de 2.4J."
+ },
+ {
+  "brand": "stanley",
+  "brandName": "Stanley",
+  "sku": "STGS7115-QS",
+  "model": "STGS7115",
+  "category": "Amoladoras",
+  "description": "Amoladora angular de 750W y 115mm con diseño compacto, interruptor deslizante y bloqueo de eje."
+ },
+ {
+  "brand": "stanley",
+  "brandName": "Stanley",
+  "sku": "SC16-QS",
+  "model": "SC16",
+  "category": "Sierras",
+  "description": "Sierra circular de 1600W con disco de 190mm, ajuste rápido de profundidad de corte y biselado a 45°."
+ },
+ {
+  "brand": "stanley",
+  "brandName": "Stanley",
+  "sku": "SMEJ600-QS",
+  "model": "SMEJ600",
+  "category": "Sierras",
+  "description": "Sierra de calar de 600W con acción pendular de 3 etapas, velocidad variable y base inclinable."
+ },
+ {
+  "brand": "stanley",
+  "brandName": "Stanley",
+  "sku": "SCD121S2K-QW",
+  "model": "SCD121",
+  "category": "Taladros",
+  "description": "Taladro atornillador inalámbrico de 10.8V / 12V con 2 baterías de Litio y maletín."
+ },
+ {
+  "brand": "stanley",
+  "brandName": "Stanley",
+  "sku": "SCD201C2K-QW",
+  "model": "SCD201",
+  "category": "Taladros",
+  "description": "Taladro percutor a batería de 18V con tecnología de Ion-Litio, doble velocidad y par ajustable."
+ },
+ {
+  "brand": "stanley",
+  "brandName": "Stanley",
+  "sku": "STHR202K-QS",
+  "model": "STHR202",
+  "category": "Martillos",
+  "description": "Martillo rotativo SDS-Plus de 620W con función de percusión y taladrado sencillo con maletín."
+ },
+ {
+  "brand": "stanley",
+  "brandName": "Stanley",
+  "sku": "STGS9125-QS",
+  "model": "STGS9125",
+  "category": "Amoladoras",
+  "description": "Amoladora angular de 900W y 125mm de alto rendimiento con empuñadura lateral de 3 posiciones."
+ },
+ {
+  "brand": "stanley",
+  "brandName": "Stanley",
+  "sku": "STEL314-QS",
+  "model": "STEL314",
+  "category": "Sierras",
+  "description": "Sierra de calar profesional de 710W con control de velocidad electrónica y maletín."
+ },
+ {
+  "brand": "stanley",
+  "brandName": "Stanley",
+  "sku": "STEL601-QS",
+  "model": "STEL601",
+  "category": "Lijadoras",
+  "description": "Lijadora orbital de 280W con diseño ergonómico de palma y sistema de extracción de polvo."
+ },
+ {
+  "brand": "stanley",
+  "brandName": "Stanley",
+  "sku": "STEL401-QS",
+  "model": "STEL401",
+  "category": "Cepillos",
+  "description": "Cepillo eléctrico de 750W con profundidad de corte ajustable hasta 2mm para carpintería."
+ },
+ {
+  "brand": "stanley",
+  "brandName": "Stanley",
+  "sku": "SFMCD711C2K-QW",
+  "model": "SFMCD711",
+  "category": "Taladros",
+  "description": "Taladro percutor Stanley FATMAX V20 18V sin escobillas con baterías de 1.5Ah de alta eficiencia."
+ },
+ {
+  "brand": "stanley",
+  "brandName": "Stanley",
+  "sku": "SFMCH900M2K-QW",
+  "model": "SFMCH900",
+  "category": "Martillos",
+  "description": "Martillo perforador Stanley FATMAX V20 18V SDS-Plus a batería con 3 modos de trabajo."
+ },
+ {
+  "brand": "stanley",
+  "brandName": "Stanley",
+  "sku": "SFMCG400B-XJ",
+  "model": "SFMCG400",
+  "category": "Amoladoras",
+  "description": "Amoladora Stanley FATMAX V20 de 18V y 125mm sin escobillas con freno electrónico de seguridad."
+ },
+ {
+  "brand": "stanley",
+  "brandName": "Stanley",
+  "sku": "SFMCS520B-XJ",
+  "model": "SFMCS520",
+  "category": "Sierras",
+  "description": "Sierra circular Stanley FATMAX V20 de 18V con disco de 165mm para cortes rectos rápidos."
+ },
+ {
+  "brand": "stanley",
+  "brandName": "Stanley",
+  "sku": "STEL1701-QS",
+  "model": "STEL1701",
+  "category": "Fresadoras",
+  "description": "Fresadora tupí de madera de 1300W con control de profundidad micrométrico y velocidad variable."
+ },
+ {
+  "brand": "stanley",
+  "brandName": "Stanley",
+  "sku": "STDR5510-QS",
+  "model": "STDR5510",
+  "category": "Taladros",
+  "description": "Taladro rotativo simple de 550W sin percusión con portabrocas sin llave de 10mm."
+ },
+ {
+  "brand": "stanley",
+  "brandName": "Stanley",
+  "sku": "STEL620-QS",
+  "model": "STEL620",
+  "category": "Lijadoras",
+  "description": "Lijadora excéntrica orbital de 300W y 125mm con sistema de recogida de polvo ciclónico."
+ },
+ {
+  "brand": "stanley",
+  "brandName": "Stanley",
+  "sku": "STPT600-QS",
+  "model": "STPT600",
+  "category": "Jardín",
+  "description": "Soplador y aspirador eléctrico de mano de 600W con bolsa recolectora de polvo y velocidad fija."
+ },
+ {
+  "brand": "stanley",
+  "brandName": "Stanley",
+  "sku": "SXPW14E-QS",
+  "model": "SXPW14E",
+  "category": "Limpieza",
+  "description": "Hidrolimpiadora compacta de alta presión de 1400W con caudal de 390 l/h y manguera de alta presión."
+ },
+ {
+  "brand": "stanley",
+  "brandName": "Stanley",
+  "sku": "SXPW22E-QS",
+  "model": "SXPW22E",
+  "category": "Limpieza",
+  "description": "Hidrolimpiadora de 2200W, 150 bar con bomba de aluminio de alta durabilidad y pistola de gatillo."
+ },
+ {
+  "brand": "stanley",
+  "brandName": "Stanley",
+  "sku": "STEL701-QS",
+  "model": "STEL701",
+  "category": "Multiherramientas",
+  "description": "Multiherramienta oscilante de 300W con sistema de cambio de accesorios sin herramientas."
+ },
+ {
+  "brand": "stanley",
+  "brandName": "Stanley",
+  "sku": "STEL341-QS",
+  "model": "STEL341",
+  "category": "Sierras sable",
+  "description": "Sierra sable de 750W con zapata ajustable y cambio rápido de hoja para demolición ligera."
+ },
+ {
+  "brand": "stanley",
+  "brandName": "Stanley",
+  "sku": "STHT1-77341",
+  "model": "STHT1-77341",
+  "category": "Medición",
+  "description": "Nivel láser autonivelante de líneas cruzadas con alcance de 10 metros y base magnética."
+ }
+]

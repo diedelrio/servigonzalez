@@ -1,10 +1,17 @@
 @import "tailwindcss";
 
-@source "../*.html";
+@source "../src";
 @source "../js";
 
 @theme {
-    --color-bd-orange: #FF6600;
-    --color-bd-orange-dark: #E05500;
-    --font-title: 'Montserrat Variable', 'Montserrat', sans-serif;
+    --color-paper: #F7F6F2;
+    --color-ink: #1F2328;
+    --color-muted: #555B63;
+    --color-line: #DAD7CE;
+    --color-brand: #1D4E89;
+    --color-brand-dark: #153A68;
+    --color-brand-soft: #DCE7F5;
+    --color-signal: #F2B705;
+    --font-title: 'Space Grotesk Variable', 'Inter Variable', sans-serif;
+    --ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
 }

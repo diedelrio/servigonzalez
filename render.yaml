@@ -1,0 +1,25 @@
+# Blueprint de Render: sitio estático (Static Site).
+# Las URLs de la app se configuran en Render > Environment (ver README.md).
+services:
+  - type: web
+    runtime: static
+    name: servigonzalez-web
+    buildCommand: npm ci --include=dev && npm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: APP_URL # URL base de la app de reparaciones, p. ej. https://app.servicegonzalez.es
+        sync: false
+      - key: SITE_URL # URL pública de este sitio, p. ej. https://www.servicegonzalez.es
+        sync: false
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+      - path: /fonts/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable

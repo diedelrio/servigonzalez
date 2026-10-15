@@ -1,0 +1,193 @@
+<!--meta {"title":"Servi-González - Servicio Técnico Multimarca en Valencia","description":"Casa de garantía oficial certificada de Black & Decker, DeWalt, Stanley y Bosch en Valencia: reparaciones en garantía y fuera de garantía, presupuesto en 72 h, recambios y venta de maquinaria.","nav":""} -->
+    <div id="popup-bienvenida" class="overlay fixed inset-0 z-[100] flex items-center justify-center p-4 bg-ink/60" role="dialog" aria-modal="true" aria-labelledby="popup-titulo" aria-hidden="true" inert>
+        <div class="panel bg-white rounded-2xl max-w-lg w-full p-8 shadow-2xl border border-line relative">
+            <button type="button" data-popup-close class="absolute top-4 right-4 text-muted hover:text-ink bg-paper hover:bg-line p-2 rounded-full transition-colors duration-150 cursor-pointer" aria-label="Cerrar ventana">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+            <div class="space-y-4">
+                <h2 id="popup-titulo" class="font-title text-2xl font-bold tracking-tight leading-snug text-balance">Servi-González estrena nueva gerencia</h2>
+                <p class="text-muted leading-relaxed">Iniciamos una etapa de renovación manteniendo la misma oficialidad y confianza de siempre.</p>
+                <p class="text-muted text-sm leading-relaxed">Durante los próximos meses iremos implementando nuevos procesos y optimizando nuestros servicios. Gracias por formar parte de esta evolución.</p>
+                <div class="pt-2">
+                    <button type="button" data-popup-close class="btn btn-primary btn-lg w-full">Entendido</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main id="contenido">
+        <!-- Hero -->
+        <section class="mx-auto max-w-7xl px-6 lg:px-10 pt-14 pb-16 lg:pt-20 lg:pb-24 grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-center">
+            <div class="hero-in">
+                <h1 class="font-title text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-balance">Tu herramienta, reparada por el taller oficial.</h1>
+                <p class="mt-6 text-lg text-muted max-w-xl leading-relaxed">Somos casa de garantía oficial certificada de Black &amp; Decker, DeWalt, Stanley y Bosch. Reparamos en garantía y fuera de ella, con presupuesto en 72 horas y recogida a domicilio.</p>
+                <div class="mt-9 flex flex-wrap gap-3">
+                    <button type="button" data-modal-open="solicitarReparacion" data-modal-title="Solicitar recogida y reparación" class="btn btn-primary btn-lg">Solicitar recogida</button>
+                </div>
+            </div>
+            <!-- Sustituir por una foto real del taller cuando el cliente la aporte -->
+            <div class="hero-card bg-white border border-line rounded-2xl p-7 sm:p-8 shadow-sm">
+                <p class="text-sm text-muted font-medium">Así sigues tu reparación en la app</p>
+                <ol class="mt-6 space-y-5">
+                    <li class="flex gap-4">
+                        <span class="shrink-0 h-8 w-8 rounded-full bg-brand text-white grid place-items-center" aria-hidden="true"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                        <div><p class="font-semibold">Solicita</p><p class="text-sm text-muted">Registramos tu herramienta y generamos tu orden.</p></div>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="shrink-0 h-8 w-8 rounded-full bg-brand text-white grid place-items-center" aria-hidden="true"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                        <div><p class="font-semibold">Diagnóstico</p><p class="text-sm text-muted">Un técnico revisa el equipo y comprueba la garantía.</p></div>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="shrink-0 h-8 w-8 rounded-full bg-signal text-ink grid place-items-center font-bold text-sm" aria-hidden="true">3</span>
+                        <div><p class="font-semibold">Presupuesto</p><p class="text-sm text-muted">Te enviamos el presupuesto para que lo apruebes.</p></div>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="shrink-0 h-8 w-8 rounded-full border-2 border-line text-muted grid place-items-center font-semibold text-sm" aria-hidden="true">4</span>
+                        <div><p class="font-semibold text-muted">En reparación</p><p class="text-sm text-muted">Reparamos con repuestos originales de la marca.</p></div>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="shrink-0 h-8 w-8 rounded-full border-2 border-line text-muted grid place-items-center font-semibold text-sm" aria-hidden="true">5</span>
+                        <div><p class="font-semibold text-muted">Listo para retirar</p><p class="text-sm text-muted">Te avisamos en cuanto esté terminada.</p></div>
+                    </li>
+                </ol>
+                <button type="button" data-modal-open="consultarReparacion" data-modal-title="Consultar estado de mi reparación" class="btn mt-7 w-full">Consultar mi reparación</button>
+            </div>
+        </section>
+
+        <!-- Tres caminos -->
+        <section class="mx-auto max-w-7xl px-6 lg:px-10" aria-label="¿Qué necesitas?">
+            <div class="border-t-2 border-ink">
+                <a href="garantias.html#en-garantia" class="group grid md:grid-cols-[170px_1fr_1.2fr_32px] items-center gap-2 md:gap-6 py-6 border-b border-line">
+                    <span class="text-brand font-semibold text-sm">Garantía</span>
+                    <span class="font-title text-2xl font-semibold tracking-tight transition-colors duration-150 group-hover:text-brand-dark">Tengo garantía</span>
+                    <span class="text-muted">Reparación sin coste y sin transporte, con factura o ticket.</span>
+                    <span class="hidden md:block text-brand transition-transform duration-150 ease-out group-hover:translate-x-1" aria-hidden="true">&rarr;</span>
+                </a>
+                <a href="garantias.html#fuera-de-garantia" class="group grid md:grid-cols-[170px_1fr_1.2fr_32px] items-center gap-2 md:gap-6 py-6 border-b border-line">
+                    <span class="text-brand font-semibold text-sm">Presupuesto</span>
+                    <span class="font-title text-2xl font-semibold tracking-tight transition-colors duration-150 group-hover:text-brand-dark">Fuera de garantía</span>
+                    <span class="text-muted">Presupuesto previo en 72 horas, antes de reparar nada.</span>
+                    <span class="hidden md:block text-brand transition-transform duration-150 ease-out group-hover:translate-x-1" aria-hidden="true">&rarr;</span>
+                </a>
+                <a href="tienda.html" class="group grid md:grid-cols-[170px_1fr_1.2fr_32px] items-center gap-2 md:gap-6 py-6 border-b border-line">
+                    <span class="text-brand font-semibold text-sm">Compra</span>
+                    <span class="font-title text-2xl font-semibold tracking-tight transition-colors duration-150 group-hover:text-brand-dark">Quiero comprar</span>
+                    <span class="text-muted">Maquinaria nueva y recambios originales, con asesoramiento.</span>
+                    <span class="hidden md:block text-brand transition-transform duration-150 ease-out group-hover:translate-x-1" aria-hidden="true">&rarr;</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Cómo funciona -->
+        <section class="mx-auto max-w-7xl px-6 lg:px-10 pt-24">
+            <h2 class="font-title text-3xl md:text-4xl font-bold tracking-tight max-w-2xl text-balance">Así es una reparación, de principio a fin</h2>
+            <div class="steps relative mt-12 grid gap-8 md:grid-cols-5 md:gap-0" data-reveal>
+                <div class="steps-line hidden md:block absolute top-5 left-0 right-0 h-0.5 bg-line" aria-hidden="true"></div>
+                <div class="step relative md:pr-6">
+                    <div class="relative h-10 w-10 rounded-full bg-brand text-white grid place-items-center font-title font-semibold mb-5">1</div>
+                    <h3 class="font-title text-xl font-semibold mb-1.5">Solicitas la recogida</h3>
+                    <p class="text-muted">Desde la web, por teléfono o WhatsApp. Sin desplazamientos.</p>
+                </div>
+                <div class="step relative md:pr-6">
+                    <div class="relative h-10 w-10 rounded-full bg-brand text-white grid place-items-center font-title font-semibold mb-5">2</div>
+                    <h3 class="font-title text-xl font-semibold mb-1.5">Diagnóstico</h3>
+                    <p class="text-muted">Revisamos la herramienta y validamos la garantía con el fabricante.</p>
+                </div>
+                <div class="step relative md:pr-6">
+                    <div class="relative h-10 w-10 rounded-full bg-brand text-white grid place-items-center font-title font-semibold mb-5">3</div>
+                    <h3 class="font-title text-xl font-semibold mb-1.5">Aprobación de presupuesto</h3>
+                    <p class="text-muted">Si no hay garantía, te lo enviamos en 72 h. Nunca actuamos sin tu aprobación.</p>
+                </div>
+                <div class="step relative md:pr-6">
+                    <div class="relative h-10 w-10 rounded-full bg-brand text-white grid place-items-center font-title font-semibold mb-5">4</div>
+                    <h3 class="font-title text-xl font-semibold mb-1.5">Pedido de repuestos a la marca</h3>
+                    <p class="text-muted">Solicitamos a la marca los repuestos originales que tu herramienta necesita.</p>
+                </div>
+                <div class="step relative md:pr-6">
+                    <div class="relative h-10 w-10 rounded-full bg-brand text-white grid place-items-center font-title font-semibold mb-5">5</div>
+                    <h3 class="font-title text-xl font-semibold mb-1.5">Entrega y seguimiento</h3>
+                    <p class="text-muted">Te avisamos al terminar y consultas el estado en la app cuando quieras.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Garantía o no -->
+        <section class="mx-auto max-w-7xl px-6 lg:px-10 pt-24">
+            <h2 class="font-title text-3xl md:text-4xl font-bold tracking-tight max-w-2xl text-balance">Garantía o no: lo que cambia para ti</h2>
+            <div class="mt-10 grid md:grid-cols-2 gap-6" data-reveal>
+                <div class="reveal bg-brand text-white rounded-2xl p-8 md:p-9">
+                    <h3 class="font-title text-2xl font-bold">En garantía</h3>
+                    <dl class="mt-5 divide-y divide-white/25 text-brand-soft">
+                        <div class="py-3"><dt class="font-semibold text-white">Coste</dt><dd>Sin coste de reparación ni de transporte.</dd></div>
+                        <div class="py-3"><dt class="font-semibold text-white">Necesitas</dt><dd>Factura o ticket de compra que acredite la garantía.</dd></div>
+                        <div class="py-3"><dt class="font-semibold text-white">No cubre</dt><dd>Manipulación por terceros, golpes, humedad o sobrecarga.</dd></div>
+                    </dl>
+                    <a href="garantias.html#en-garantia" class="inline-block mt-4 font-semibold underline underline-offset-4 decoration-white/50 hover:decoration-white">Ver condiciones de garantía</a>
+                </div>
+                <div class="reveal bg-white border border-line rounded-2xl p-8 md:p-9">
+                    <h3 class="font-title text-2xl font-bold">Fuera de garantía</h3>
+                    <dl class="mt-5 divide-y divide-line text-muted">
+                        <div class="py-3"><dt class="font-semibold text-ink">Coste</dt><dd>Presupuesto previo, sin sorpresas.</dd></div>
+                        <div class="py-3"><dt class="font-semibold text-ink">Plazo</dt><dd>Te lo enviamos en 72 horas como máximo.</dd></div>
+                        <div class="py-3"><dt class="font-semibold text-ink">Repuestos</dt><dd>Usamos solo repuestos originales provistos por las marcas.</dd></div>
+                    </dl>
+                    <a href="garantias.html#fuera-de-garantia" class="inline-block mt-4 font-semibold text-brand-dark underline underline-offset-4 decoration-brand/40 hover:decoration-brand-dark">Ver cómo funciona el presupuesto</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Marcas -->
+        <section class="mx-auto max-w-7xl px-6 lg:px-10 mt-24" aria-label="Marcas"><div class="py-9 border-y border-line flex flex-col md:flex-row md:items-center gap-8 md:justify-between">
+            <p class="font-semibold text-muted max-w-[14rem]">Casa de garantía oficial certificada de</p>
+            <div class="flex flex-wrap items-center gap-x-12 gap-y-6">
+                <img src="img/logo-black-decker.png" alt="Black &amp; Decker" width="304" height="166" loading="lazy" decoding="async" class="brand-logo h-11 w-auto">
+                <img src="img/logo-bosch.png" alt="Bosch" width="900" height="541" loading="lazy" decoding="async" class="brand-logo h-11 w-auto">
+                <img src="img/logo-dewalt.png" alt="DeWalt" width="360" height="141" loading="lazy" decoding="async" class="brand-logo h-11 w-auto">
+                <img src="img/logo-stanley.png" alt="Stanley" width="360" height="141" loading="lazy" decoding="async" class="brand-logo h-11 w-auto">
+            </div>
+        </div></section>
+
+        <!-- Ubicación y opiniones -->
+        <section class="mx-auto max-w-7xl px-6 lg:px-10 pt-24" aria-labelledby="ubicacion">
+            <h2 id="ubicacion" class="font-title text-3xl md:text-4xl font-bold tracking-tight max-w-2xl text-balance">Dónde estamos</h2>
+            <p class="mt-3 text-muted">C/ de Sant Ignasi de Loiola, 23 · Extramurs, 46008 València · Lunes a viernes, 8:00 a 14:00 y 16:00 a 19:00</p>
+            <div class="mt-10 grid lg:grid-cols-[1.5fr_1fr] gap-6" data-reveal>
+                <div class="reveal relative h-[420px] rounded-2xl overflow-hidden border border-line bg-white">
+                    <div id="map-placeholder" class="absolute inset-0 flex flex-col items-center justify-center text-center p-6 gap-3">
+                        <p class="text-sm text-muted max-w-xs">Para mostrar el mapa de Google necesitamos tu consentimiento para cookies de terceros.</p>
+                        <button type="button" data-cookie-accept class="btn btn-primary">Aceptar y ver mapa</button>
+                        <a href="https://www.google.com/maps/search/?api=1&query=C%2F+de+Sant+Ignasi+de+Loiola+23+46008+Valencia" target="_blank" rel="noopener noreferrer" class="text-sm text-brand-dark font-semibold underline underline-offset-4">Abrir en Google Maps</a>
+                    </div>
+                    <iframe title="Mapa de ubicación de Servi-González" class="hidden absolute inset-0 w-full h-full" frameborder="0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" data-consent-src="https://maps.google.com/maps?q=C/%20de%20Sant%20Ignasi%20de%20Loiola,%2023,%20Extramurs,%2046008%20Val%C3%A8ncia&t=&z=16&ie=UTF8&iwloc=&output=embed" data-consent-placeholder="map-placeholder"></iframe>
+                </div>
+                <div id="reviews" class="reveal reviews bg-white border border-line rounded-2xl p-7 flex flex-col h-[420px]" role="region" aria-roledescription="carrusel" aria-label="Opiniones de clientes">
+                    <h3 class="font-title text-xl font-semibold">Lo que dicen nuestros clientes</h3>
+                    <div class="reviews-stage relative flex-1 mt-5 overflow-hidden">
+                        <p class="reviews-empty text-muted">Pronto publicaremos aquí las opiniones de nuestros clientes en Google.</p>
+                    </div>
+                    <div class="reviews-controls hidden items-center justify-between gap-4 mt-4">
+                        <div class="reviews-dots flex items-center gap-1"></div>
+                        <button type="button" class="reviews-toggle text-sm font-semibold text-muted hover:text-ink cursor-pointer" aria-pressed="false">Pausar</button>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=C%2F+de+Sant+Ignasi+de+Loiola+23+46008+Valencia" target="_blank" rel="noopener noreferrer" class="mt-4 text-sm font-semibold text-brand-dark underline underline-offset-4 self-start">Ver opiniones en Google</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tienda + contacto -->
+        <section class="mx-auto max-w-7xl px-6 lg:px-10 pt-24 grid md:grid-cols-2 gap-6" data-reveal>
+            <div class="reveal bg-white border border-line rounded-2xl p-8 md:p-10 flex flex-col">
+                <h2 class="font-title text-2xl md:text-3xl font-bold tracking-tight text-balance">Maquinaria nueva y recambios originales</h2>
+                <p class="mt-3 text-muted flex-1">Somos distribuidores autorizados. Consulta el stock de taladros, amoladoras, sierras, baterías, cargadores y accesorios.</p>
+                <a href="tienda.html" class="btn mt-7 self-start">Ver la tienda</a>
+            </div>
+            <div class="reveal bg-ink text-white on-dark rounded-2xl p-8 md:p-10 flex flex-col">
+                <h2 class="font-title text-2xl md:text-3xl font-bold tracking-tight text-balance">¿Prefieres hablar con una persona?</h2>
+                <p class="mt-3 text-gray-300 flex-1">Lunes a viernes, de 8:00 a 14:00 y de 16:00 a 19:00.</p>
+                <div class="mt-7 flex flex-wrap gap-3">
+                    <a href="tel:+34963844805" class="btn btn-solid-light">963 84 48 05</a>
+                    <a href="https://wa.me/34963844805" target="_blank" rel="noopener noreferrer" class="btn btn-light">WhatsApp</a>
+                </div>
+            </div>
+        </section>
+    </main>
