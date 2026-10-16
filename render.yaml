@@ -9,9 +9,9 @@ services:
     envVars:
       - key: NODE_VERSION
         value: 20
-      - key: APP_URL # URL base de la app de reparaciones, p. ej. https://app.servicegonzalez.es
+      - key: APP_URL # URL base de la app de reparaciones, p. ej. https://app.servigonzalez.es
         sync: false
-      - key: SITE_URL # URL pública de este sitio, p. ej. https://www.servicegonzalez.es
+      - key: SITE_URL # URL pública de este sitio, p. ej. https://www.servigonzalez.es
         sync: false
     headers:
       - path: /*

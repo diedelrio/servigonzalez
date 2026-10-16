@@ -4,7 +4,7 @@
 //   APP_URL              URL base de la app de reparaciones (https://app.ejemplo.com). Obligatoria en Render.
 //   APP_SOLICITAR_URL    (opcional) URL completa del formulario de solicitud. Por defecto APP_URL + /solicitar
 //   APP_CONSULTA_URL     (opcional) URL completa de la consulta de estado. Por defecto APP_URL + /consulta
-//   SITE_URL             URL pública de este sitio, para canonical, sitemap y robots. Por defecto https://www.servicegonzalez.es
+//   SITE_URL             URL pública de este sitio, para canonical, sitemap y robots. Por defecto https://www.servigonzalez.es
 const fs = require('fs');
 const path = require('path');
 const renderCatalog = require('./catalog');
@@ -14,7 +14,7 @@ const OUT = path.join(ROOT, 'dist');
 const NAV = ['reparaciones', 'garantias', 'tienda', 'marcas', 'contacto'];
 
 const trimSlash = u => u.replace(/\/+$/, '');
-const SITE = trimSlash(process.env.SITE_URL || 'https://www.servicegonzalez.es') + '/';
+const SITE = trimSlash(process.env.SITE_URL || 'https://www.servigonzalez.es') + '/';
 
 // --- URLs de la app ---
 if (process.env.RENDER && !process.env.APP_URL) {
@@ -60,7 +60,7 @@ for (const file of fs.readdirSync(pagesDir)) {
     const meta = JSON.parse(m[1]);
     const content = source.slice(m[0].length).replace('{{catalogo}}', () => renderCatalog(ROOT));
     const headFile = path.join(pagesDir, `${name}.head.html`);
-    const head = fs.existsSync(headFile) ? fs.readFileSync(headFile, 'utf8').split('https://www.servicegonzalez.es/').join(SITE) : '';
+    const head = fs.existsSync(headFile) ? fs.readFileSync(headFile, 'utf8').split('https://www.servigonzalez.es/').join(SITE) : '';
     const canonical = name === 'index' ? SITE : `${SITE}${name}.html`;
     const title = meta.title.includes('Servi-González') ? meta.title : `${meta.title} - Servi-González`;
 

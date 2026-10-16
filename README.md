@@ -30,10 +30,10 @@ Abre `dist/index.html` en el navegador (o sírvelo con `npx serve dist`). No edi
 
 | Variable | Obligatoria | Descripción |
 |---|---|---|
-| `APP_URL` | Sí | URL base de la app de reparaciones, p. ej. `https://app.servicegonzalez.es`. Si falta en Render, el build falla a propósito para no publicar enlaces a `localhost`. |
+| `APP_URL` | Sí | URL base de la app de reparaciones, p. ej. `https://app.servigonzalez.es`. Si falta en Render, el build falla a propósito para no publicar enlaces a `localhost`. |
 | `APP_SOLICITAR_URL` | No | URL completa del formulario de solicitud. Por defecto `APP_URL` + `/solicitar`. |
 | `APP_CONSULTA_URL` | No | URL completa de la consulta de estado. Por defecto `APP_URL` + `/consulta`. |
-| `SITE_URL` | Recomendada | URL pública del sitio (canonical, sitemap y robots). Por defecto `https://www.servicegonzalez.es`. |
+| `SITE_URL` | Recomendada | URL pública del sitio (canonical, sitemap y robots). Por defecto `https://www.servigonzalez.es`. |
 
 Tras cambiar una variable hay que volver a desplegar (las URLs se escriben en `dist/js/config.js` durante el build).
 

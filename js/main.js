@@ -339,7 +339,7 @@ document.addEventListener('DOMContentLoaded', () => {
     input.addEventListener('input', () => { limit = PAGE; render(); });
     more.addEventListener('click', () => { limit += PAGE; render(); });
 
-    // Enlaces desde otras páginas: tienda.html?marca=bosch&q=taladro
+    // Enlaces desde otras páginas: tienda.html?marca=dewalt&q=taladro
     const params = new URLSearchParams(location.search);
     const wanted = params.get('marca');
     const btn = brandBtns.find(b => b.dataset.brand === wanted);

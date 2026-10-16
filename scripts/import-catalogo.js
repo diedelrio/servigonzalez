@@ -7,7 +7,6 @@ const input = process.argv[2];
 if (!input) { console.error('Indica el .md del catálogo'); process.exit(1); }
 
 const BRANDS = {
-    'bosch professional': { id: 'bosch', name: 'Bosch Professional' },
     'black+decker': { id: 'black-decker', name: 'Black & Decker' },
     'dewalt': { id: 'dewalt', name: 'DeWalt' },
     'stanley': { id: 'stanley', name: 'Stanley' }

@@ -26,12 +26,13 @@ module.exports = function renderCatalog(root) {
         .join('');
 
     const rows = items.map(i => {
-        const msg = encodeURIComponent(`Hola! Quisiera consultar el stock de: ${i.model} (${i.brandName}), ref. ${i.sku}.`);
+        const subject = encodeURIComponent(`Consulta de stock: ${i.model} (${i.brandName})`);
+        const body = encodeURIComponent(`Hola, quisiera consultar el stock de ${i.model} (${i.brandName}), ref. ${i.sku}.`);
         const search = fold([i.brandName, i.model, i.sku, i.category, i.description].join(' '));
         return `                <li class="product grid md:grid-cols-[190px_1fr_auto] items-start gap-2 md:gap-8 py-6 border-b border-line" data-brand="${i.brand}" data-category="${esc(i.category)}" data-search="${esc(search)}">
                     <div><span class="text-brand-dark font-semibold text-sm block">${esc(i.brandName)}</span><span class="text-xs text-muted">${esc(i.category)}</span></div>
                     <div class="max-w-2xl"><h3 class="font-title text-xl font-semibold">${esc(i.model)}</h3><p class="text-muted mt-1">${esc(i.description)}</p><p class="text-xs text-muted mt-2">Ref. ${esc(i.sku)}</p></div>
-                    <a href="https://wa.me/34963844805?text=${msg}" target="_blank" rel="noopener noreferrer" class="btn md:mt-1">Consultar stock<span class="sr-only"> de ${esc(i.model)} ${esc(i.brandName)}</span></a>
+                    <a href="mailto:sat@servigonzalez.es?subject=${subject}&body=${body}" class="btn md:mt-1">Consultar stock<span class="sr-only"> de ${esc(i.model)} ${esc(i.brandName)}</span></a>
                 </li>`;
     }).join('\n');
 
@@ -50,7 +51,7 @@ module.exports = function renderCatalog(root) {
             <ul id="cat-list" class="mt-2 border-t-2 border-ink">
 ${rows}
             </ul>
-            <p id="cat-empty" class="hidden mt-6 text-muted">No hay productos que coincidan. Prueba con otra búsqueda o <a href="https://wa.me/34963844805" target="_blank" rel="noopener noreferrer" class="font-semibold text-brand-dark underline underline-offset-4">consúltanos por WhatsApp</a>.</p>
+            <p id="cat-empty" class="hidden mt-6 text-muted">No hay productos que coincidan. Prueba con otra búsqueda o <a href="mailto:sat@servigonzalez.es" class="font-semibold text-brand-dark underline underline-offset-4">escríbenos por correo</a>.</p>
             <div class="mt-8"><button type="button" id="cat-more" class="btn btn-lg hidden">Ver más productos</button></div>
             <p class="mt-8 text-sm text-muted max-w-2xl">Los productos mostrados no constituyen una oferta en firme: precios, existencias y disponibilidad se confirman antes de cualquier compra.</p>`;
 };
