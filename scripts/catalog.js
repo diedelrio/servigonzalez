@@ -32,7 +32,10 @@ module.exports = function renderCatalog(root) {
         return `                <li class="product grid md:grid-cols-[190px_1fr_auto] items-start gap-2 md:gap-8 py-6 border-b border-line" data-brand="${i.brand}" data-category="${esc(i.category)}" data-search="${esc(search)}">
                     <div><span class="text-brand-dark font-semibold text-sm block">${esc(i.brandName)}</span><span class="text-xs text-muted">${esc(i.category)}</span></div>
                     <div class="max-w-2xl"><h3 class="font-title text-xl font-semibold">${esc(i.model)}</h3><p class="text-muted mt-1">${esc(i.description)}</p><p class="text-xs text-muted mt-2">Ref. ${esc(i.sku)}</p></div>
-                    <a href="mailto:sat@servigonzalez.es?subject=${subject}&body=${body}" class="btn md:mt-1">Consultar stock<span class="sr-only"> de ${esc(i.model)} ${esc(i.brandName)}</span></a>
+                    <div class="flex flex-col items-start md:items-end gap-3 md:mt-1">
+                        <a href="mailto:sat@servigonzalez.es?subject=${subject}&body=${body}" class="btn">Consultar stock<span class="sr-only"> de ${esc(i.model)} ${esc(i.brandName)}</span></a>
+                        <a href="repuestos.html?modelo=${encodeURIComponent(i.model)}" class="text-sm font-semibold text-brand-dark underline underline-offset-4">Ver despiece<span class="sr-only"> de ${esc(i.model)}</span></a>
+                    </div>
                 </li>`;
     }).join('\n');
 

@@ -4,6 +4,7 @@
 //   APP_URL              URL base de la app de reparaciones (https://app.ejemplo.com). Obligatoria en Render.
 //   APP_SOLICITAR_URL    (opcional) URL completa del formulario de solicitud. Por defecto APP_URL + /solicitar
 //   APP_CONSULTA_URL     (opcional) URL completa de la consulta de estado. Por defecto APP_URL + /consulta
+//   APP_DESPIECE_URL     (opcional) URL completa del buscador de despieces. Por defecto APP_URL + /despiece
 //   SITE_URL             URL pública de este sitio, para canonical, sitemap y robots. Por defecto https://www.servigonzalez.es
 const fs = require('fs');
 const path = require('path');
@@ -11,7 +12,7 @@ const renderCatalog = require('./catalog');
 
 const ROOT = path.join(__dirname, '..');
 const OUT = path.join(ROOT, 'dist');
-const NAV = ['reparaciones', 'garantias', 'tienda', 'marcas', 'contacto'];
+const NAV = ['reparaciones', 'garantias', 'tienda', 'repuestos', 'marcas', 'contacto'];
 
 const trimSlash = u => u.replace(/\/+$/, '');
 const SITE = trimSlash(process.env.SITE_URL || 'https://www.servigonzalez.es') + '/';
@@ -27,7 +28,8 @@ const config = {
     urls: {
         app: appBase + '/',
         solicitarReparacion: process.env.APP_SOLICITAR_URL || appBase + '/solicitar',
-        consultarReparacion: process.env.APP_CONSULTA_URL || appBase + '/consulta'
+        consultarReparacion: process.env.APP_CONSULTA_URL || appBase + '/consulta',
+        despiece: process.env.APP_DESPIECE_URL || appBase + '/despiece'
     },
     reviews: JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/reviews.json'), 'utf8'))
 };
@@ -87,4 +89,5 @@ console.log(`dist/ listo: ${indexable.length} páginas indexables`);
 console.log(`  app:        ${config.urls.app}`);
 console.log(`  solicitar:  ${config.urls.solicitarReparacion}`);
 console.log(`  consultar:  ${config.urls.consultarReparacion}`);
+console.log(`  despiece:   ${config.urls.despiece}`);
 console.log(`  sitio:      ${SITE}`);

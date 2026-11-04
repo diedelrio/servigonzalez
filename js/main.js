@@ -347,3 +347,27 @@ document.addEventListener('DOMContentLoaded', () => {
     if (params.get('q')) input.value = params.get('q');
     render();
 });
+
+// --- BUSCADOR DE DESPIECES (página Repuestos) ---
+// Carga en el iframe la app de despieces. Acepta ?modelo=XXXX en la URL de esta página (por ejemplo desde la tienda)
+// y pasa ?embed=1&model=XXXX a la app. La app avisa su altura con
+// window.parent.postMessage({ type: 'servig:resize', height: <px> }, '*').
+document.addEventListener('DOMContentLoaded', () => {
+    const frame = document.getElementById('despiece-frame');
+    if (!frame) return;
+    let url;
+    try { url = new URL(window.SERVIGONZALEZ_CONFIG.urls.despiece); } catch (e) { return; }
+    url.searchParams.set('embed', '1');
+    const params = new URLSearchParams(location.search);
+    const model = (params.get('modelo') || params.get('model') || '').replace(/\s+/g, '');
+    if (/^[A-Za-z0-9][A-Za-z0-9._\/-]{0,39}$/.test(model)) url.searchParams.set('model', model);
+    frame.src = url.href;
+
+    window.addEventListener('message', e => {
+        if (e.origin !== url.origin || e.source !== frame.contentWindow) return;
+        const d = e.data;
+        if (d && (d.type === 'servig:resize' || d.type === 'sg:height') && Number.isFinite(d.height)) {
+            frame.style.height = Math.min(Math.max(Math.round(d.height), 480), 2400) + 'px';
+        }
+    });
+});

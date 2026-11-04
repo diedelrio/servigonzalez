@@ -1,0 +1,49 @@
+<!--meta {"title":"Repuestos y despiece de tu herramienta","description":"Consulta el despiece de tu herramienta escribiendo el número de modelo y pide la pieza que necesitas. Solo repuestos originales provistos por las marcas.","nav":"repuestos"} -->
+    <main id="contenido">
+        <section class="mx-auto max-w-7xl px-6 lg:px-10 pt-14 pb-10 lg:pt-20">
+            <h1 class="font-title text-4xl sm:text-5xl font-bold tracking-tight leading-[1.05] max-w-3xl text-balance">Repuestos y despiece de tu herramienta</h1>
+            <p class="mt-6 text-lg text-muted max-w-2xl leading-relaxed">Escribe el número de modelo, consulta el despiece con la lista de piezas y dinos cuál necesitas. Trabajamos solo con repuestos originales provistos por las marcas.</p>
+        </section>
+
+        <section class="mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-[1fr_2.1fr] gap-8 lg:gap-12 items-start">
+            <div class="lg:sticky lg:top-28 order-2 lg:order-1">
+                <h2 class="font-title text-2xl font-bold tracking-tight">Cómo encontrar tu repuesto</h2>
+                <ol class="mt-6 space-y-6">
+                    <li class="flex gap-4"><span class="shrink-0 h-9 w-9 rounded-full bg-brand text-white grid place-items-center font-title font-semibold" aria-hidden="true">1</span><div><p class="font-semibold">Busca el modelo en la etiqueta</p><p class="text-muted text-sm mt-0.5">Está en la placa de la herramienta, junto al número de serie. Escríbelo sin espacios.</p></div></li>
+                    <li class="flex gap-4"><span class="shrink-0 h-9 w-9 rounded-full bg-brand text-white grid place-items-center font-title font-semibold" aria-hidden="true">2</span><div><p class="font-semibold">Consulta el despiece</p><p class="text-muted text-sm mt-0.5">Verás el diagrama y la lista de piezas con su referencia.</p></div></li>
+                    <li class="flex gap-4"><span class="shrink-0 h-9 w-9 rounded-full bg-brand text-white grid place-items-center font-title font-semibold" aria-hidden="true">3</span><div><p class="font-semibold">Pídenos la pieza</p><p class="text-muted text-sm mt-0.5">Envíanos la referencia por correo o llámanos y te confirmamos disponibilidad.</p></div></li>
+                </ol>
+                <div class="mt-8 bg-white border border-line rounded-2xl p-6">
+                    <h3 class="font-title text-lg font-semibold">¿No encuentras tu modelo?</h3>
+                    <p class="text-muted text-sm mt-2">Escríbenos con una foto de la etiqueta y lo buscamos por ti.</p>
+                    <div class="mt-4 flex flex-wrap gap-3"><a href="mailto:sat@servigonzalez.es?subject=Consulta%20de%20repuestos" class="btn btn-primary">Escribir un correo</a><a href="tel:+34963844805" class="btn">963 84 48 05</a></div>
+                </div>
+            </div>
+
+            <div class="order-1 lg:order-2">
+                <div class="bg-white border border-line rounded-2xl shadow-sm overflow-hidden p-4 sm:p-6">
+                    <iframe id="despiece-frame" title="Buscador de despieces" class="w-full block border-0 bg-white" style="height: 640px" sandbox="allow-forms allow-scripts allow-same-origin allow-popups allow-downloads" referrerpolicy="strict-origin-when-cross-origin" loading="lazy"></iframe>
+                    <noscript><p class="p-6 text-muted">El buscador de despieces necesita JavaScript. Escríbenos a <a href="mailto:sat@servigonzalez.es" class="font-semibold text-brand-dark underline underline-offset-4">sat@servigonzalez.es</a> con el modelo de tu herramienta y te ayudamos.</p></noscript>
+                </div>
+                <p class="mt-4 text-sm text-muted">¿El buscador no carga? Escríbenos a <a href="mailto:sat@servigonzalez.es?subject=Consulta%20de%20repuestos" class="font-semibold text-brand-dark underline underline-offset-4">sat@servigonzalez.es</a> o llámanos al <a href="tel:+34963844805" class="font-semibold text-brand-dark underline underline-offset-4">963 84 48 05</a>.</p>
+            </div>
+        </section>
+
+        <section class="mx-auto max-w-4xl px-6 lg:px-10 pt-24">
+            <h2 class="font-title text-3xl font-bold tracking-tight">Preguntas frecuentes</h2>
+            <div class="mt-8 border-t-2 border-ink">
+                <details class="faq border-b border-line" name="faq">
+                    <summary class="flex items-center justify-between gap-6 py-5 font-title text-xl font-semibold">¿Dónde está el número de modelo?<span class="faq-icon text-brand text-2xl leading-none" aria-hidden="true">+</span></summary>
+                    <p class="pb-6 text-muted max-w-2xl">En la etiqueta o placa de la herramienta, junto al número de serie. Si no lo encuentras, mándanos una foto.</p>
+                </details>
+                <details class="faq border-b border-line" name="faq">
+                    <summary class="flex items-center justify-between gap-6 py-5 font-title text-xl font-semibold">¿Los repuestos son originales?<span class="faq-icon text-brand text-2xl leading-none" aria-hidden="true">+</span></summary>
+                    <p class="pb-6 text-muted max-w-2xl">Sí. Usamos solo repuestos originales provistos por las marcas.</p>
+                </details>
+                <details class="faq border-b border-line" name="faq">
+                    <summary class="flex items-center justify-between gap-6 py-5 font-title text-xl font-semibold">¿Puedo pedir que me la reparen en lugar de comprar la pieza?<span class="faq-icon text-brand text-2xl leading-none" aria-hidden="true">+</span></summary>
+                    <p class="pb-6 text-muted max-w-2xl">Claro. Solicita la recogida y la reparamos: el presupuesto es sin cargo, y si pides la recogida abonas los portes. <a href="reparaciones.html" class="font-semibold text-brand-dark underline underline-offset-4">Cómo funciona una reparación</a>.</p>
+                </details>
+            </div>
+        </section>
+    </main>
